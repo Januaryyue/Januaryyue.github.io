@@ -104,3 +104,4 @@ theme: Landscape
 deploy:
   type: git
   repo: https://github.com/Januaryyue/Januaryyue.github.io.git
+  branch: master
