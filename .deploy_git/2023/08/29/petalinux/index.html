@@ -1,37 +1,497 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"januaryyue.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="petalinux编译环境替换设计    &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;       版本 简介 编辑日期 作者    V1.0 初稿 2023&#x2F;6&#x2F;5 李政      1. 概述设计背景 petalinux环境占用内存过大，每个项目产品，都需要针对其创建一个petalinux的平台环境实测20G，每个项目实测26G，服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="petalinux编译环境替换设计">
+<meta property="og:url" content="https://januaryyue.github.io/2023/08/29/petalinux/index.html">
+<meta property="og:site_name" content="Jan的博客">
+<meta property="og:description" content="petalinux编译环境替换设计    &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;       版本 简介 编辑日期 作者    V1.0 初稿 2023&#x2F;6&#x2F;5 李政      1. 概述设计背景 petalinux环境占用内存过大，每个项目产品，都需要针对其创建一个petalinux的平台环境实测20G，每个项目实测26G，服务">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-29T09:00:56.906Z">
+<meta property="article:modified_time" content="2023-08-29T09:00:56.906Z">
+<meta property="article:author" content="January">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://januaryyue.github.io/2023/08/29/petalinux/">
 
 
-{% block content %}
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+  <title>petalinux编译环境替换设计 | Jan的博客</title>
+  
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jan的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Linux</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://januaryyue.github.io/2023/08/29/petalinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="January">
+      <meta itemprop="description" content="Linux编程,Python学习,爬虫学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jan的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          petalinux编译环境替换设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-29 17:00:56" itemprop="dateCreated datePublished" datetime="2023-08-29T17:00:56+08:00">2023-08-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div align="center">
+<font size=7 > petalinux编译环境替换设计
+
+</font>
+</div>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<div align="center">
+
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>简介</th>
+<th>编辑日期</th>
+<th>作者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V1.0</td>
+<td>初稿</td>
+<td>2023&#x2F;6&#x2F;5</td>
+<td>李政</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="设计背景"><a href="#设计背景" class="headerlink" title="设计背景"></a>设计背景</h2><ol>
+<li>petalinux环境占用内存过大，每个项目产品，都需要针对其创建一个petalinux的平台环境实测20G，每个项目实测26G，服务器上2022平台就占用了168G。</li>
+<li>petalinux编译过慢，快则40分钟，慢则两个小时，甚至更久。</li>
+<li>petalinux黑盒子较多，许多框架较为神秘，不知怎么编译，怎么实现，怎么链接的，全包含在他的编译工具里面。</li>
+<li>编译过程中，出现各种错误，很难进行排查，常见错误python xxx错误，验证影响底层开发。</li>
+<li>调试内核时，往往编个版本进行验证，需要花费许久时间，一点小改动，就得重新进行以小时为单位的编译时间花费。极其不人性化。</li>
+<li>busybox中的命令被xilinx内嵌进环境中，无法获取环境之外的命令支持。</li>
+<li>要么得联网编译，网速感人，要么需要下载75G的环境安装包，占用内存太大。</li>
+</ol>
+<h2 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h2><ul>
+<li>提高内核编译效率，有助于内核bug解决。</li>
+<li>减少搭建环境造成的资源浪费。（内存资源和搭建成本）</li>
+<li>底层开发项目复用。（petalinux环境有权限要求，需创建人权限才能编译）</li>
+<li>开源项目。</li>
+</ul>
+<h1 id="2-petalinux环境介绍"><a href="#2-petalinux环境介绍" class="headerlink" title="2. petalinux环境介绍"></a>2. petalinux环境介绍</h1><ol>
+<li><p>petalinux环境搭建</p>
+<ul>
+<li>xilinx官网下载petalinux-v2019.2-final-installer.run（以19版为例）</li>
+<li>服务器&#x2F;虚拟机下载好一系列环境库（python zlib1g-dev gcc-multilib zlib1g:i386 screen pax等）</li>
+<li>运行run文件开始搭建petalinux环境（耗时很久）</li>
+</ul>
+</li>
+<li><p>创建项目及编译前准备</p>
+<ul>
+<li>petalinux-create –type project –template zynqMP –name test(创建项目)</li>
+<li>生成源码（每次创建项目都需要重新生成源码，2015以后均不可复用）</li>
+<li>petalinux-config（配置各种环境，UBOOT、kernel、rootfs、config，uboot和kernel的config文件不知逻辑保存）</li>
+</ul>
+</li>
+<li><p>各个模块进行编译</p>
+<ul>
+<li>petalinux-build -c u-boot(编译UBOOT)</li>
+<li>petalinux-build -c kernel(编译kernel)</li>
+<li>petalinux-build -c rootfs(编译rootfs)</li>
+<li>petalinux-build -c device-tree(编译device-tree)</li>
+</ul>
+</li>
+<li><p>每次编译都需要40+min,第一次编译甚至更久。</p>
+</li>
+</ol>
+<h1 id="3-设计思路"><a href="#3-设计思路" class="headerlink" title="3. 设计思路"></a>3. 设计思路</h1><h2 id="底层内核image-ub组成"><a href="#底层内核image-ub组成" class="headerlink" title="底层内核image.ub组成"></a>底层内核image.ub组成</h2><ul>
+<li>Linux内核编译出来的Image.gz（选择内核压缩方式为gzip）</li>
+<li>rootfs.cpio.gz（包含busybox及一些底层命令和脚本文件）</li>
+<li>system.dtb（设备树）</li>
+</ul>
+<h2 id="Linux内核编译"><a href="#Linux内核编译" class="headerlink" title="Linux内核编译"></a>Linux内核编译</h2><ul>
+<li>官网下载Linux内核源码，目前下载的是和xilinx同版本内核linux-5.15.19</li>
+<li>下载arm官网编译器aarch64-none-linux-gnu-gcc，不采用xilinx的aarch64-linux-gnu-gcc</li>
+<li>移植arm芯片的soc及platform信息，以及一些xilinx驱动（dma、clk等xilinx打过补丁）</li>
+<li>配置linux内核config。（由于是标准内核，config文件都可找到）</li>
+<li>直接make进行编译内核，生成目录就在arch&#x2F;arm64&#x2F;boot&#x2F;</li>
+</ul>
+<h2 id="rootfs编译"><a href="#rootfs编译" class="headerlink" title="rootfs编译"></a>rootfs编译</h2><ul>
+<li>rootfs只是命令集合体和脚本文件</li>
+<li>petalinux增减命令功能，可下载最新的busybox命令库，在busybox中选定需要的命令进行编译替换。</li>
+<li>脚本启动文件等，我直接借用A3的rootfs文件，暂未深入研究，不影响编译环境。</li>
+<li>用户名密码&#x2F;shell命令行提示符等，均可通过修改passwd&#x2F;host等实现（已完成测试）</li>
+</ul>
+<h2 id="设备树编译"><a href="#设备树编译" class="headerlink" title="设备树编译"></a>设备树编译</h2><ul>
+<li>目前我是将解析出来的FPGA的xsa文件移植到arch&#x2F;arm64&#x2F;boot&#x2F;dts中</li>
+<li>通过设备树中的include链接成一个system.dts</li>
+<li>和linux内核一起编译成system.dtb，生成目录就在arch&#x2F;arm64&#x2F;boot&#x2F;dts</li>
+</ul>
+<h2 id="生成image-ub文件"><a href="#生成image-ub文件" class="headerlink" title="生成image.ub文件"></a>生成image.ub文件</h2><ul>
+<li>通过mkimage命令将Image.gz&#x2F;rootfs.cpio.gz&#x2F;system.dtb文件进行链接生成image.ub（xilinx同款链接方式）</li>
+<li>该种编译内核方式是linux官方给的一种参考，故与xilinx无关，暂不修改</li>
+</ul>
+<h1 id="4-个人测试结果"><a href="#4-个人测试结果" class="headerlink" title="4. 个人测试结果"></a>4. 个人测试结果</h1><ol>
+<li>内核可以稳定启动，内核相关启动日志及驱动打印和petalinux环境生成的一模一样</li>
+<li>网卡、串口、N850驱动、GPIO驱动、硬核驱动、UBI文件系统挂载正常、FPGA加载OK、WEB端显示正常（查询、操作等）、ARM运行未见异常。</li>
+<li>底层自测表格测试OK，未深入测试。</li>
+<li>内核编译花费3分钟，且使用几核编译均可参数控制。</li>
+<li>内核占用内存1.5G,压缩包800MB。进行备份，可做到如ARM代码压缩备份。不依赖权限问题,指定编译器即可编译。</li>
+</ol>
+<h1 id="5-风险评估"><a href="#5-风险评估" class="headerlink" title="5. 风险评估"></a>5. 风险评估</h1><ol>
+<li>稳定性风险，设备没有经过长时间稳定性测试，无法保证稳定性。</li>
+<li>在线升级、网卡驱动等一些列，均只做过一次性测试，未做压力测试，故无法保证功能完整性。</li>
+<li>设备性能可能存在风险，未做任何性能测试，无法保证性能。</li>
+</ol>
+<h1 id="6-工作量评估"><a href="#6-工作量评估" class="headerlink" title="6. 工作量评估"></a>6. 工作量评估</h1><h2 id="初次编译"><a href="#初次编译" class="headerlink" title="初次编译"></a>初次编译</h2><ul>
+<li>根据xilinx SDK源码移植xilinx相关驱动及控制器、平台信息等</li>
+<li>配置内核的config文件</li>
+<li>根据xsa，使用petalinux生成设备树（目前未研究设备树该如何生成）</li>
+<li>移植设备树到内核，进行编译</li>
+<li>按项目需求确定busybox的命令库及启动顺序</li>
+</ul>
+<h2 id="二次编译-其他平台"><a href="#二次编译-其他平台" class="headerlink" title="二次编译&#x2F;其他平台"></a>二次编译&#x2F;其他平台</h2><ul>
+<li>内核源码直接解压缩复用</li>
+<li>若是其他平台，生成设备树后替换设备树即可</li>
+<li>按实际项目需求进行处理</li>
+</ul>
+<h1 id="7-设计总结"><a href="#7-设计总结" class="headerlink" title="7. 设计总结"></a>7. 设计总结</h1><p>此次设计属于解决底层开发人员的去繁就简，提高开发效率，减少内存占用和提高可复用性，避免严重依赖xilinx而做的技术研究。单就设备底层而言，未有任何性能优化和提高的地方，只是给公司提供了另一种底层开发的思路。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/29/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">设计背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E7%9A%84"><span class="nav-number">1.2.</span> <span class="nav-text">设计目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-petalinux%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">2. petalinux环境介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">3. 设计思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E5%86%85%E6%A0%B8image-ub%E7%BB%84%E6%88%90"><span class="nav-number">3.1.</span> <span class="nav-text">底层内核image.ub组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91"><span class="nav-number">3.2.</span> <span class="nav-text">Linux内核编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rootfs%E7%BC%96%E8%AF%91"><span class="nav-number">3.3.</span> <span class="nav-text">rootfs编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%A0%91%E7%BC%96%E8%AF%91"><span class="nav-number">3.4.</span> <span class="nav-text">设备树编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90image-ub%E6%96%87%E4%BB%B6"><span class="nav-number">3.5.</span> <span class="nav-text">生成image.ub文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E4%B8%AA%E4%BA%BA%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">4. 个人测试结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0"><span class="nav-number">5.</span> <span class="nav-text">5. 风险评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%84%E4%BC%B0"><span class="nav-number">6.</span> <span class="nav-text">6. 工作量评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%AC%A1%E7%BC%96%E8%AF%91"><span class="nav-number">6.1.</span> <span class="nav-text">初次编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91-%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0"><span class="nav-number">6.2.</span> <span class="nav-text">二次编译&#x2F;其他平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">7. 设计总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">January</p>
+  <div class="site-description" itemprop="description">Linux编程,Python学习,爬虫学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">January</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
