@@ -103,4 +103,4 @@ theme: Landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/lizheng-sudo/lizheng-sudo.github.io.git
+  repo: https://github.com/Januaryyue/Januaryyue.github.io.git
