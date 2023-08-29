@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>&#x5E95;&#x5C42;&#x4FEE;&#x6539;&#x70B9;&#x6C47;&#x603B;&#x62A5;&#x544A;</title>
+      <title>petalinux&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x66FF;&#x6362;&#x8BBE;&#x8BA1;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,8 +262,7 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <div align="center">
-<font size="7"> 
-<p>&#x5E95;&#x5C42;&#x4FEE;&#x6539;&#x70B9;&#x6C47;&#x62A5;&#x62A5;&#x544A;</p>
+<font size="7"> petalinux&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x66FF;&#x6362;&#x8BBE;&#x8BA1;
 </font>
 </div>
 &#xA0;
@@ -284,867 +283,143 @@ pre[data-line] .line-highlight[data-end]:after {
 </thead>
 <tbody>
 <tr>
-<td>V0.1</td>
+<td>V1.0</td>
 <td>&#x521D;&#x7A3F;</td>
-<td>2023-4-16</td>
+<td>2023/6/5</td>
 <td>&#x674E;&#x653F;</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div style="page-break-after: always;"></div>
-<div align="center">
-<font size="7"> 
-&#x76EE;&#x5F55;
-</font>
-</div>
+<h1 class="mume-header" id="1-%E6%A6%82%E8%BF%B0">1. &#x6982;&#x8FF0;</h1>
+
+<h2 class="mume-header" id="%E8%AE%BE%E8%AE%A1%E8%83%8C%E6%99%AF">&#x8BBE;&#x8BA1;&#x80CC;&#x666F;</h2>
+
+<ol>
+<li>petalinux&#x73AF;&#x5883;&#x5360;&#x7528;&#x5185;&#x5B58;&#x8FC7;&#x5927;&#xFF0C;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x4EA7;&#x54C1;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x9488;&#x5BF9;&#x5176;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;petalinux&#x7684;&#x5E73;&#x53F0;&#x73AF;&#x5883;&#x5B9E;&#x6D4B;20G&#xFF0C;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x5B9E;&#x6D4B;26G&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E0A;2022&#x5E73;&#x53F0;&#x5C31;&#x5360;&#x7528;&#x4E86;168G&#x3002;</li>
+<li>petalinux&#x7F16;&#x8BD1;&#x8FC7;&#x6162;&#xFF0C;&#x5FEB;&#x5219;40&#x5206;&#x949F;&#xFF0C;&#x6162;&#x5219;&#x4E24;&#x4E2A;&#x5C0F;&#x65F6;&#xFF0C;&#x751A;&#x81F3;&#x66F4;&#x4E45;&#x3002;</li>
+<li>petalinux&#x9ED1;&#x76D2;&#x5B50;&#x8F83;&#x591A;&#xFF0C;&#x8BB8;&#x591A;&#x6846;&#x67B6;&#x8F83;&#x4E3A;&#x795E;&#x79D8;&#xFF0C;&#x4E0D;&#x77E5;&#x600E;&#x4E48;&#x7F16;&#x8BD1;&#xFF0C;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#xFF0C;&#x600E;&#x4E48;&#x94FE;&#x63A5;&#x7684;&#xFF0C;&#x5168;&#x5305;&#x542B;&#x5728;&#x4ED6;&#x7684;&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#x91CC;&#x9762;&#x3002;</li>
+<li>&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;&#x5404;&#x79CD;&#x9519;&#x8BEF;&#xFF0C;&#x5F88;&#x96BE;&#x8FDB;&#x884C;&#x6392;&#x67E5;&#xFF0C;&#x5E38;&#x89C1;&#x9519;&#x8BEF;python xxx&#x9519;&#x8BEF;&#xFF0C;&#x9A8C;&#x8BC1;&#x5F71;&#x54CD;&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#x3002;</li>
+<li>&#x8C03;&#x8BD5;&#x5185;&#x6838;&#x65F6;&#xFF0C;&#x5F80;&#x5F80;&#x7F16;&#x4E2A;&#x7248;&#x672C;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x8BB8;&#x4E45;&#x65F6;&#x95F4;&#xFF0C;&#x4E00;&#x70B9;&#x5C0F;&#x6539;&#x52A8;&#xFF0C;&#x5C31;&#x5F97;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x4EE5;&#x5C0F;&#x65F6;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x82B1;&#x8D39;&#x3002;&#x6781;&#x5176;&#x4E0D;&#x4EBA;&#x6027;&#x5316;&#x3002;</li>
+<li>busybox&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x88AB;xilinx&#x5185;&#x5D4C;&#x8FDB;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x73AF;&#x5883;&#x4E4B;&#x5916;&#x7684;&#x547D;&#x4EE4;&#x652F;&#x6301;&#x3002;</li>
+<li>&#x8981;&#x4E48;&#x5F97;&#x8054;&#x7F51;&#x7F16;&#x8BD1;&#xFF0C;&#x7F51;&#x901F;&#x611F;&#x4EBA;&#xFF0C;&#x8981;&#x4E48;&#x9700;&#x8981;&#x4E0B;&#x8F7D;75G&#x7684;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x5360;&#x7528;&#x5185;&#x5B58;&#x592A;&#x5927;&#x3002;</li>
+</ol>
+<h2 class="mume-header" id="%E8%AE%BE%E8%AE%A1%E7%9B%AE%E7%9A%84">&#x8BBE;&#x8BA1;&#x76EE;&#x7684;</h2>
+
 <ul>
-<li><a href="#%E7%BB%BC%E8%BF%B0">&#x7EFC;&#x8FF0;</a></li>
-<li><a href="#1-web_omt%E9%80%9A%E4%BF%A1%E4%B8%A2%E5%8C%85">1. WEB_OMT&#x901A;&#x4FE1;&#x4E22;&#x5305;</a>
+<li>&#x63D0;&#x9AD8;&#x5185;&#x6838;&#x7F16;&#x8BD1;&#x6548;&#x7387;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x5185;&#x6838;bug&#x89E3;&#x51B3;&#x3002;</li>
+<li>&#x51CF;&#x5C11;&#x642D;&#x5EFA;&#x73AF;&#x5883;&#x9020;&#x6210;&#x7684;&#x8D44;&#x6E90;&#x6D6A;&#x8D39;&#x3002;&#xFF08;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x548C;&#x642D;&#x5EFA;&#x6210;&#x672C;&#xFF09;</li>
+<li>&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#x9879;&#x76EE;&#x590D;&#x7528;&#x3002;&#xFF08;petalinux&#x73AF;&#x5883;&#x6709;&#x6743;&#x9650;&#x8981;&#x6C42;&#xFF0C;&#x9700;&#x521B;&#x5EFA;&#x4EBA;&#x6743;&#x9650;&#x624D;&#x80FD;&#x7F16;&#x8BD1;&#xFF09;</li>
+<li>&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x3002;</li>
+</ul>
+<h1 class="mume-header" id="2-petalinux%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D">2. petalinux&#x73AF;&#x5883;&#x4ECB;&#x7ECD;</h1>
+
+<ol>
+<li>
+<p>petalinux&#x73AF;&#x5883;&#x642D;&#x5EFA;</p>
 <ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">&#x6E90;&#x7801;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
+<li>xilinx&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;petalinux-v2019.2-final-installer.run&#xFF08;&#x4EE5;19&#x7248;&#x4E3A;&#x4F8B;&#xFF09;</li>
+<li>&#x670D;&#x52A1;&#x5668;/&#x865A;&#x62DF;&#x673A;&#x4E0B;&#x8F7D;&#x597D;&#x4E00;&#x7CFB;&#x5217;&#x73AF;&#x5883;&#x5E93;&#xFF08;python zlib1g-dev gcc-multilib zlib1g:i386 screen pax&#x7B49;&#xFF09;</li>
+<li>&#x8FD0;&#x884C;run&#x6587;&#x4EF6;&#x5F00;&#x59CB;&#x642D;&#x5EFA;petalinux&#x73AF;&#x5883;&#xFF08;&#x8017;&#x65F6;&#x5F88;&#x4E45;&#xFF09;</li>
 </ul>
 </li>
-<li><a href="#2-oran%E8%AE%BE%E5%A4%87bit%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5">2. ORAN&#x8BBE;&#x5907;bit&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x5931;&#x8D25;</a>
+<li>
+<p>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x53CA;&#x7F16;&#x8BD1;&#x524D;&#x51C6;&#x5907;</p>
 <ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-1">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-1">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-1">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
+<li>petalinux-create --type project --template zynqMP --name test(&#x521B;&#x5EFA;&#x9879;&#x76EE;)</li>
+<li>&#x751F;&#x6210;&#x6E90;&#x7801;&#xFF08;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x90FD;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x6E90;&#x7801;&#xFF0C;2015&#x4EE5;&#x540E;&#x5747;&#x4E0D;&#x53EF;&#x590D;&#x7528;&#xFF09;</li>
+<li>petalinux-config&#xFF08;&#x914D;&#x7F6E;&#x5404;&#x79CD;&#x73AF;&#x5883;&#xFF0C;UBOOT&#x3001;kernel&#x3001;rootfs&#x3001;config&#xFF0C;uboot&#x548C;kernel&#x7684;config&#x6587;&#x4EF6;&#x4E0D;&#x77E5;&#x903B;&#x8F91;&#x4FDD;&#x5B58;&#xFF09;</li>
 </ul>
 </li>
-<li><a href="#3-%E8%AE%BE%E5%A4%87%E7%BD%91%E5%8D%A1%E5%87%BA%E7%8E%B0%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98">3. &#x8BBE;&#x5907;&#x7F51;&#x5361;&#x51FA;&#x73B0;&#x4E22;&#x5305;&#x95EE;&#x9898;</a>
+<li>
+<p>&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</p>
 <ul>
-<li><a href="#%E9%97%AE%E9%A2%98%E7%8E%B0%E8%B1%A1">&#x95EE;&#x9898;&#x73B0;&#x8C61;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-2">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-1">&#x6E90;&#x7801;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-2">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
-<li><a href="#%E5%90%8E%E7%BB%AD%E6%80%9D%E8%B7%AF%E5%80%9F%E9%89%B4">&#x540E;&#x7EED;&#x601D;&#x8DEF;&#x501F;&#x9274;</a></li>
+<li>petalinux-build -c u-boot(&#x7F16;&#x8BD1;UBOOT)</li>
+<li>petalinux-build -c kernel(&#x7F16;&#x8BD1;kernel)</li>
+<li>petalinux-build -c rootfs(&#x7F16;&#x8BD1;rootfs)</li>
+<li>petalinux-build -c device-tree(&#x7F16;&#x8BD1;device-tree)</li>
 </ul>
 </li>
-<li><a href="#4-oran%E8%AE%BE%E5%A4%87tampstamp%E5%87%BA%E7%8E%B0%E7%B3%BB%E7%BB%9F%E6%8C%82%E6%AD%BB">4. ORAN&#x8BBE;&#x5907;tampstamp&#x51FA;&#x73B0;&#x7CFB;&#x7EDF;&#x6302;&#x6B7B;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-2">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-2">&#x6E90;&#x7801;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-3">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-1">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
+<li>
+<p>&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x90FD;&#x9700;&#x8981;40+min,&#x7B2C;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#x751A;&#x81F3;&#x66F4;&#x4E45;&#x3002;</p>
 </li>
-<li><a href="#5-oran%E8%AE%BE%E5%A4%87ptp%E9%A9%B1%E5%8A%A8%E5%8F%8Aptp%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1">5. ORAN&#x8BBE;&#x5907;PTP&#x9A71;&#x52A8;&#x53CA;PTP&#x63A7;&#x5236;&#x903B;&#x8F91;&#x8BBE;&#x8BA1;</a>
-<ul>
-<li><a href="#%E9%A2%84%E7%A0%94%E9%9C%80%E6%B1%82">&#x9884;&#x7814;&#x9700;&#x6C42;</a></li>
-<li><a href="#%E5%8E%9F%E6%9C%89%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90">&#x539F;&#x6709;&#x8BBE;&#x8BA1;&#x5206;&#x6790;</a></li>
-<li><a href="#%E7%90%86%E8%AE%BA%E8%AE%BE%E8%AE%A1">&#x7406;&#x8BBA;&#x8BBE;&#x8BA1;</a></li>
-<li><a href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</a></li>
-</ul>
-</li>
-<li><a href="#6-ptp%E4%B8%A2%E5%A4%B1%E6%BA%90%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E7%B2%BE%E5%BA%A6%E4%BF%9D%E6%8C%81">6. PTP&#x4E22;&#x5931;&#x6E90;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x7CBE;&#x5EA6;&#x4FDD;&#x6301;</a>
-<ul>
-<li><a href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">&#x9700;&#x6C42;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF">&#x89E3;&#x51B3;&#x601D;&#x8DEF;</a></li>
-<li><a href="#%E7%AE%97%E6%B3%95%E8%B0%83%E8%AF%95">&#x7B97;&#x6CD5;&#x8C03;&#x8BD5;</a></li>
-<li><a href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-1">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</a></li>
-</ul>
-</li>
-<li><a href="#7-ptp-master%E8%B7%B3%E5%8F%98%E5%AF%BC%E8%87%B4rms%E6%94%B6%E6%95%9B%E5%A4%AA%E6%85%A2">7. PTP master&#x8DF3;&#x53D8;&#x5BFC;&#x81F4;rms&#x6536;&#x655B;&#x592A;&#x6162;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E5%88%86%E6%9E%90">&#x73B0;&#x8C61;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-1">&#x89E3;&#x51B3;&#x601D;&#x8DEF;</a></li>
-<li><a href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-2">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</a></li>
-</ul>
-</li>
-<li><a href="#8-ptp%E7%8A%B6%E6%80%81%E4%B8%8A%E6%8A%A5%E5%8F%8Aweb%E7%AB%AF%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE">8. PTP&#x72B6;&#x6001;&#x4E0A;&#x62A5;&#x53CA;web&#x7AEF;&#x53C2;&#x6570;&#x914D;&#x7F6E;</a>
-<ul>
-<li><a href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90-1">&#x9700;&#x6C42;&#x5206;&#x6790;</a></li>
-<li><a href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F">&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0">&#x6E90;&#x7801;&#x5B9E;&#x73B0;</a></li>
-<li><a href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-3">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</a></li>
-</ul>
-</li>
-<li><a href="#9-m2ru%E7%AD%89oran%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8ecpri%E7%BD%91%E5%8D%A1%E4%B8%A2ptp%E9%80%9A%E4%BF%A1%E5%8C%85">9. M2RU&#x7B49;ORAN&#x8BBE;&#x5907;&#x9A71;&#x52A8;ecpri&#x7F51;&#x5361;&#x4E22;ptp&#x901A;&#x4FE1;&#x5305;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-3">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-3">&#x6E90;&#x7801;&#x5206;&#x6790;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-2">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#10-a3-oran%E7%AD%89%E7%AC%AC%E4%B8%89%E5%B9%B3%E5%8F%B0oran%E8%AE%BE%E5%A4%8725g%E7%BD%91%E5%8F%A3%E6%8C%82%E6%AD%BB%E9%97%AE%E9%A2%98">10. A3-ORAN&#x7B49;&#x7B2C;&#x4E09;&#x5E73;&#x53F0;ORAN&#x8BBE;&#x5907;25G&#x7F51;&#x53E3;&#x6302;&#x6B7B;&#x95EE;&#x9898;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-4">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D">&#x95EE;&#x9898;&#x5B9A;&#x4F4D;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-3">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#11-fhm%E9%A2%84%E7%A0%94%E9%A1%B9%E7%9B%AE">11. FHM&#x9884;&#x7814;&#x9879;&#x76EE;</a>
-<ul>
-<li><a href="#%E9%92%88%E5%AF%B9axi_dma%E9%A9%B1%E5%8A%A8%E8%BF%9B%E8%A1%8C%E7%BC%96%E5%86%99%E5%B9%B6%E6%8F%90%E4%BE%9B%E6%BA%90%E7%A0%81%E6%94%AF%E6%8C%81">&#x9488;&#x5BF9;axi_dma&#x9A71;&#x52A8;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#x5E76;&#x63D0;&#x4F9B;&#x6E90;&#x7801;&#x652F;&#x6301;</a></li>
-<li><a href="#%E9%92%88%E5%AF%B9eth_oran%E7%BD%91%E5%8D%A1%E7%8A%B6%E6%80%81%E6%B3%A8%E5%86%8C%E4%B8%AD%E6%96%AD%E8%BF%9B%E8%A1%8C%E7%9B%91%E6%B5%8B">&#x9488;&#x5BF9;eth_oran&#x7F51;&#x5361;&#x72B6;&#x6001;&#x6CE8;&#x518C;&#x4E2D;&#x65AD;&#x8FDB;&#x884C;&#x76D1;&#x6D4B;</a></li>
-<li><a href="#%E7%BC%96%E5%86%99eus_oran%E4%BD%9C%E4%B8%BAmaster%E6%BA%90%E7%9A%84%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8">&#x7F16;&#x5199;EUS_ORAN&#x4F5C;&#x4E3A;master&#x6E90;&#x7684;&#x8BBE;&#x5907;&#x9A71;&#x52A8;</a></li>
-<li><a href="#%E9%92%88%E5%AF%B9fpga%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91n850%E6%97%B6%E9%92%9F%E8%8A%AF%E7%89%87%E7%9A%84%E6%8E%A7%E5%88%B6%E9%A9%B1%E5%8A%A8">&#x9488;&#x5BF9;FPGA&#x8FDB;&#x884C;&#x5F00;&#x53D1;N850&#x65F6;&#x949F;&#x82AF;&#x7247;&#x7684;&#x63A7;&#x5236;&#x9A71;&#x52A8;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-4">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#12-%E8%BD%AF%E4%BB%B6%E5%9C%A8%E7%BA%BF%E5%8D%87%E7%BA%A7%E5%BA%95%E5%B1%82%E4%B8%8D%E7%94%9F%E6%95%88%E9%97%AE%E9%A2%98%E4%BA%8C%E6%AC%A1%E5%8D%87%E7%BA%A7">12. &#x8F6F;&#x4EF6;&#x5728;&#x7EBF;&#x5347;&#x7EA7;&#x5E95;&#x5C42;&#x4E0D;&#x751F;&#x6548;&#x95EE;&#x9898;(&#x4E8C;&#x6B21;&#x5347;&#x7EA7;)</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-5">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-3">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E5%88%86%E6%9E%90%E9%AA%8C%E8%AF%81">&#x5206;&#x6790;&#x9A8C;&#x8BC1;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F">&#x89E3;&#x51B3;&#x65B9;&#x5F0F;</a></li>
-<li><a href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-4">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</a></li>
-</ul>
-</li>
-<li><a href="#13-zynq%E7%B3%BB%E5%88%97%E8%AE%BE%E5%A4%87%E5%9C%A8uboot%E4%B8%AD%E6%94%AF%E6%8C%81tftp%E5%8A%9F%E8%83%BD">13. ZYNQ&#x7CFB;&#x5217;&#x8BBE;&#x5907;&#x5728;UBOOT&#x4E2D;&#x652F;&#x6301;tftp&#x529F;&#x80FD;</a>
-<ul>
-<li><a href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E8%AE%BE%E8%AE%A1%E6%8F%8F%E8%BF%B0">&#x8BBE;&#x8BA1;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%96%BD">&#x8BBE;&#x8BA1;&#x5B9E;&#x65BD;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-5">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#14-e3%E7%AD%89am35x%E8%AE%BE%E5%A4%87%E5%87%BA%E7%8E%B0arm%E6%B2%A1%E6%9C%89%E6%89%93%E5%8D%B0%E9%97%AE%E9%A2%98">14. E3&#x7B49;AM35x&#x8BBE;&#x5907;&#x51FA;&#x73B0;ARM&#x6CA1;&#x6709;&#x6253;&#x5370;&#x95EE;&#x9898;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90">&#x73B0;&#x72B6;&#x5206;&#x6790;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-4">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-4">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-6">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#15-e3%E7%AD%89am335x%E8%AE%BE%E5%A4%87%E5%85%89%E5%8F%A3%E4%B8%8D%E9%80%9A%E9%97%AE%E9%A2%98">15. E3&#x7B49;AM335x&#x8BBE;&#x5907;&#x5149;&#x53E3;&#x4E0D;&#x901A;&#x95EE;&#x9898;</a>
-<ul>
-<li><a href="#%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-6">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-5">&#x539F;&#x56E0;&#x5206;&#x6790;</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-5">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-7">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#16-%E4%BF%AE%E6%94%B9%E5%B9%B6%E5%90%8C%E6%AD%A5%E4%B8%8A%E5%B1%82ecpri%E5%92%8Ccpri%E7%BD%91%E5%8F%A3%E5%90%8D%E7%A7%B0">16. &#x4FEE;&#x6539;&#x5E76;&#x540C;&#x6B65;&#x4E0A;&#x5C42;ecpri&#x548C;cpri&#x7F51;&#x53E3;&#x540D;&#x79F0;</a>
-<ul>
-<li><a href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0-1">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">&#x5B9E;&#x73B0;&#x539F;&#x7406;</a></li>
-<li><a href="#%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0-1">&#x6E90;&#x7801;&#x5B9E;&#x73B0;</a></li>
-</ul>
-</li>
-<li><a href="#17-m2ru%E8%AE%BE%E5%A4%87das%E5%92%8Coran%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E5%BA%95%E5%B1%82%E8%AE%BE%E8%AE%A1">17. M2RU&#x8BBE;&#x5907;DAS&#x548C;ORAN&#x5E73;&#x53F0;&#x7EDF;&#x4E00;&#x5E95;&#x5C42;&#x8BBE;&#x8BA1;</a>
-<ul>
-<li><a href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0-2">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</a></li>
-<li><a href="#%E7%90%86%E8%AE%BA%E5%88%86%E6%9E%90">&#x7406;&#x8BBA;&#x5206;&#x6790;</a></li>
-<li><a href="#%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0">&#x5E95;&#x5C42;&#x5B9E;&#x73B0;</a></li>
-<li><a href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-8">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD">&#x672A;&#x5B8C;&#x5F85;&#x7EED;...</a></li>
-</ul>
-<div style="page-break-after: always;" class="mume-header" id="%E7%BB%BC%E8%BF%B0"></div>
-# &#x7EFC;&#x8FF0;
+</ol>
+<h1 class="mume-header" id="3-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF">3. &#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h1>
 
-<h1 class="mume-header" id="1-web_omt%E9%80%9A%E4%BF%A1%E4%B8%A2%E5%8C%85">1. WEB_OMT&#x901A;&#x4FE1;&#x4E22;&#x5305;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
+<h2 class="mume-header" id="%E5%BA%95%E5%B1%82%E5%86%85%E6%A0%B8imageub%E7%BB%84%E6%88%90">&#x5E95;&#x5C42;&#x5185;&#x6838;image.ub&#x7EC4;&#x6210;</h2>
 
 <ul>
-<li><font color="blue">web&#x7AEF;&#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x7F13;&#x6162;&#xFF0C;&#x751A;&#x81F3;&#x5931;&#x8D25;</font></li>
-<li><font color="blue">web&#x7AEF;index.cgi&#x7A0B;&#x5E8F;&#x672A;&#x54CD;&#x5E94;</font></li>
-<li><font color="blue">ARM&#x8FD9;&#x8FB9;&#x663E;&#x793A;&#x6570;&#x636E;&#x53D1;&#x751F;timeout</font></li>
+<li>Linux&#x5185;&#x6838;&#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x7684;Image.gz&#xFF08;&#x9009;&#x62E9;&#x5185;&#x6838;&#x538B;&#x7F29;&#x65B9;&#x5F0F;&#x4E3A;gzip&#xFF09;</li>
+<li>rootfs.cpio.gz&#xFF08;&#x5305;&#x542B;busybox&#x53CA;&#x4E00;&#x4E9B;&#x5E95;&#x5C42;&#x547D;&#x4EE4;&#x548C;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF09;</li>
+<li>system.dtb&#xFF08;&#x8BBE;&#x5907;&#x6811;&#xFF09;</li>
 </ul>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
+<h2 class="mume-header" id="linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91">Linux&#x5185;&#x6838;&#x7F16;&#x8BD1;</h2>
 
 <ul>
-<li><font color="green">boa&#x672A;&#x5C06;&#x6570;&#x636E;&#x6B63;&#x786E;&#x642C;&#x8FD0;&#x81F3;web&#x7AEF;</font></li>
-<li><font color="green">boa&#x5904;&#x7406;&#x6570;&#x636E;&#x7B49;&#x5F85;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5360;&#x7528;CPU&#x8D44;&#x6E90;&#x8FC7;&#x591A;</font></li>
-<li><font color="green">CPU&#x8D44;&#x6E90;&#x4E0D;&#x591F;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4; Socket &#x6536;&#x53D1;&#x5305;&#x51FA;&#x73B0;&#x5EF6;&#x8FDF;&#x3001;&#x4E22;&#x5305;&#x6216;&#x963B;&#x585E;&#x7B49;&#x95EE;&#x9898;</font></li>
+<li>&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;Linux&#x5185;&#x6838;&#x6E90;&#x7801;&#xFF0C;&#x76EE;&#x524D;&#x4E0B;&#x8F7D;&#x7684;&#x662F;&#x548C;xilinx&#x540C;&#x7248;&#x672C;&#x5185;&#x6838;linux-5.15.19</li>
+<li>&#x4E0B;&#x8F7D;arm&#x5B98;&#x7F51;&#x7F16;&#x8BD1;&#x5668;aarch64-none-linux-gnu-gcc&#xFF0C;&#x4E0D;&#x91C7;&#x7528;xilinx&#x7684;aarch64-linux-gnu-gcc</li>
+<li>&#x79FB;&#x690D;arm&#x82AF;&#x7247;&#x7684;soc&#x53CA;platform&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;xilinx&#x9A71;&#x52A8;&#xFF08;dma&#x3001;clk&#x7B49;xilinx&#x6253;&#x8FC7;&#x8865;&#x4E01;&#xFF09;</li>
+<li>&#x914D;&#x7F6E;linux&#x5185;&#x6838;config&#x3002;&#xFF08;&#x7531;&#x4E8E;&#x662F;&#x6807;&#x51C6;&#x5185;&#x6838;&#xFF0C;config&#x6587;&#x4EF6;&#x90FD;&#x53EF;&#x627E;&#x5230;&#xFF09;</li>
+<li>&#x76F4;&#x63A5;make&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x5185;&#x6838;&#xFF0C;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x5C31;&#x5728;arch/arm64/boot/</li>
 </ul>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token operator">!</span>request_ready<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">process_requests</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword keyword-void">void</span> <span class="token function">process_requests</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span>request_ready<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</pre><p>&#x7531;boa&#x7684;&#x6E90;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5F53;web&#x7AEF;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x65F6;&#x5019;&#xFF0C;boa&#x7A0B;&#x5E8F;&#x5176;&#x5B9E;&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x5728;while(1)&#x4E2D;&#x8FDB;&#x884C;&#x7A7A;&#x8F6C;&#xFF0C;&#x6240;&#x4EE5;&#x7A0B;&#x5E8F;&#x4EC5;&#x4EC5;&#x662F;&#x5728;&#x4E0D;&#x65AD;&#x5730;&#x5360;&#x7528; CPU&#xFF0C;&#x4E0D;&#x91CA;&#x653E; CPU&#xFF0C;&#x5BFC;&#x81F4; CPU &#x5360;&#x7528;&#x7387;&#x6781;&#x9AD8;&#xFF0C;&#x7CFB;&#x7EDF;&#x8D1F;&#x8F7D;&#x5347;&#x9AD8;&#xFF0C;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x96BE;&#x4EE5;&#x5F97;&#x5230;&#x8DB3;&#x591F;&#x7684; CPU &#x65F6;&#x95F4;&#xFF0C;&#x4ECE;&#x800C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x53D8;&#x5F97;&#x7F13;&#x6162;&#x6216;&#x4E0D;&#x7A33;&#x5B9A;&#xFF0C;&#x751A;&#x81F3;&#x4F1A;&#x51FA;&#x73B0;&#x65E0;&#x54CD;&#x5E94;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<p>&#x6B64;&#x5916;&#xFF0C;while(1) &#x7A7A;&#x8F6C;&#x8FD8;&#x4F1A;&#x6D88;&#x8017;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x5360;&#x7528;&#x4E00;&#x5B9A;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x4E9B;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x6709;&#x610F;&#x4E49;&#x5730;&#x5229;&#x7528;&#xFF0C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x7684;&#x6D6A;&#x8D39;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<p><font color="purple">&#x53EA;&#x8981;&#x5728;&#x8BBE;&#x5907;&#x7A7A;&#x8F6C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x5373;&#x53EF;&#xFF0C;&#x6BD4;&#x5982;&#x52A0;&#x4E0A;&#x662F;sleep&#x51FD;&#x6570;&#xFF0C;&#x5BF9;CPU&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x91CA;&#x653E;</font></p>
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token operator">!</span>request_ready<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">process_requests</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//sleep 10us</span>
-<span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p><font color="green">&#x8BBE;&#x5907;&#x5237;&#x65B0;&#x9875;&#x9762;&#x4E0D;&#x5361;&#x987F;&#xFF0C;index.cgi&#x7A0B;&#x5E8F;&#x4E0D;&#x518D;&#x4E22;&#x5305;&#xFF0C;ARM&#x4E5F;&#x4E0D;&#x518D;timeout&#xFF0C;boa&#x7684;CPU&#x5360;&#x7528;&#x7387;&#x5F97;&#x5230;&#x6781;&#x5927;&#x7F13;&#x89E3;</font></p>
-<h1 class="mume-header" id="2-oran%E8%AE%BE%E5%A4%87bit%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5">2. ORAN&#x8BBE;&#x5907;bit&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x5931;&#x8D25;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-1">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p><font color="blue">ORAN&#x8BBE;&#x5907;&#x5728;&#x7CFB;&#x7EDF;&#x8D77;&#x6765;&#x540E;&#x52A0;&#x8F7D;FPGA.bit&#x6587;&#x4EF6;&#x4F1A;&#x5BFC;&#x81F4;&#x8BBE;&#x5907;&#x5361;&#x6B7B;&#xFF0C;&#x5BFC;&#x81F4;&#x8BBE;&#x5907;&#x66F4;&#x65B0;FPGA&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x70E7;&#x5199;&#x5E95;&#x5C42;&#x8FDB;&#x884C;&#x66FF;&#x6362;&#xFF0C;&#x98CE;&#x9669;&#x6781;&#x5927;&#xFF0C;&#x4E0D;&#x597D;&#x628A;&#x63A7;</font></p>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-1">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
-
-<p><font color="green">&#x7531;&#x4E8E;FPGA&#x7684;&#x5668;&#x4EF6;&#x4E00;&#x76F4;&#x5728;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x52A0;&#x8F7D;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x6302;&#x6B7B;</font></p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-1">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<p><font color="purple">&#x5728;&#x52A0;&#x8F7D;FPGA&#x4E4B;&#x524D;&#x5BF9;FPGA&#x8FDB;&#x884C;&#x590D;&#x4F4D;&#xFF0C;&#x5F3A;&#x884C;&#x7EC8;&#x6B62;FPGA&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x52A0;&#x8F7D;&#x5373;&#x53EF;</font></p>
-<h1 class="mume-header" id="3-%E8%AE%BE%E5%A4%87%E7%BD%91%E5%8D%A1%E5%87%BA%E7%8E%B0%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98">3. &#x8BBE;&#x5907;&#x7F51;&#x5361;&#x51FA;&#x73B0;&#x4E22;&#x5305;&#x95EE;&#x9898;</h1>
-
-<h2 class="mume-header" id="%E9%97%AE%E9%A2%98%E7%8E%B0%E8%B1%A1">&#x95EE;&#x9898;&#x73B0;&#x8C61;</h2>
-
-<pre class="language-text">&#x8BBE;&#x5907;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;TX/RX&#x4F1A;&#x51FA;&#x73B0;&#x4E22;&#x5305;&#xFF0C;error&#x503C;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x7F51;&#x5361;&#x4E22;&#x5305;&#x95EE;&#x9898;&#x3002;&#x4E0A;&#x5C42;&#x5E94;&#x7528;&#x589E;&#x52A0;&#x7684;&#x8865;&#x4E01;&#x662F;&#x68C0;&#x6D4B;error&#x503C;&#x5230;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x5373;ifconfig down/up&#x7F51;&#x5361;&#x8FDB;&#x884C;&#x91CD;&#x7F6E;&#x3002;
-</pre>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-2">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
-
-<pre class="language-text">&#x8FD9;&#x662F;&#x7531;&#x4E8E;Mac&#x5C42;&#x65F6;&#x949F;&#x548C;Data&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x76F8;&#x4F4D;&#x5DEE;&#xFF0C;&#x5BFC;&#x81F4;ARM&#x6838;&#x6536;&#x5305;&#x6570;&#x636E;&#x4F1A;&#x51FA;&#x73B0;&#x89E3;&#x6790;&#x9519;&#x8BEF;&#xFF0C;phy&#x72B6;&#x6001;&#x673A;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x4E3A;&#x9519;&#x8BEF;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x4E22;&#x5F03;&#xFF0C;&#x5BFC;&#x81F4;&#x8BBE;&#x5907;&#x7F51;&#x5361;&#x4E22;&#x5305;
-</pre>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-1">&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">yt8511_config_out_125m</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">mii_bus</span> <span class="token operator">*</span>bus<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> phy_id<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-        <span class="token keyword keyword-int">int</span> ret<span class="token punctuation">;</span>
-        <span class="token keyword keyword-int">int</span> val<span class="token punctuation">;</span>
-
-        <span class="token comment">/* disable auto sleep */</span>
-        val <span class="token operator">=</span> <span class="token function">ytphy_mii_rd_ext</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0x27</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-
-        val <span class="token operator">&amp;=</span> <span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">BIT</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        ret <span class="token operator">=</span> <span class="token function">ytphy_mii_wr_ext</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0x27</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-
-        <span class="token comment">/* enable RXC clock when no wire plug */</span>
-        val <span class="token operator">=</span> <span class="token function">ytphy_mii_rd_ext</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0xc</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-
-        <span class="token comment">/* ext reg 0xc.b[2:1]
-        00-----25M from pll;
-        01---- 25M from xtl;(default)
-        10-----62.5M from pll;
-        11----125M from pll(here set to this value)
-        */</span>
-        val <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ret <span class="token operator">=</span> <span class="token function">ytphy_mii_wr_ext</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0xc</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;yzhang..phy clk out, val=%#08x\n&quot;</span><span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token number">0</span>	</span></span>
-	<span class="token comment">//configure to master	</span>
-	val <span class="token operator">=</span> bus<span class="token operator">-&gt;</span><span class="token function">read</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0x9</span><span class="token comment">/*master/slave config reg*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	val <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0x3</span><span class="token operator">&lt;&lt;</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//to be manual config and force to be master</span>
-	ret <span class="token operator">=</span> bus<span class="token operator">-&gt;</span><span class="token function">write</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> phy_id<span class="token punctuation">,</span> <span class="token number">0x9</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//take effect until phy soft reset</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-		<span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-
-	<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;yzhang..phy to be master, val=%#08x\n&quot;</span><span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
-
-        <span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-static">static</span> <span class="token keyword keyword-int">int</span> <span class="token function">yt8511_config_init</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">phy_device</span> <span class="token operator">*</span>phydev<span class="token punctuation">)</span>    <span class="token comment">//phy&#x9A71;&#x52A8;&#x521D;&#x59CB;&#x5316;</span>
-<span class="token punctuation">{</span>
-	<span class="token keyword keyword-int">int</span> ret<span class="token punctuation">;</span>
-	<span class="token keyword keyword-int">int</span> val <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-	<span class="token function">ytphy_write_ext</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> <span class="token number">0xc</span><span class="token punctuation">,</span> <span class="token number">0x8057</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//&#x914D;&#x7F6E;rx delay</span>
-	<span class="token function">msleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">ytphy_write_ext</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> <span class="token number">0x1e</span><span class="token punctuation">,</span> <span class="token number">0x700</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//&#x914D;&#x7F6E;tx delay</span>
-
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-		<span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-
-	ret <span class="token operator">=</span> <span class="token function">phy_write</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> <span class="token number">0x9</span><span class="token punctuation">,</span> <span class="token number">0x0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;phy_write error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	val <span class="token operator">=</span> <span class="token function">phy_read</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> <span class="token number">0x9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;phy_read error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	val <span class="token operator">=</span> <span class="token function">phy_read</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> MII_BMCR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;phy_read error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-
-	val <span class="token operator">|=</span> YT_SOFTWARE_RESET<span class="token punctuation">;</span>
-	ret <span class="token operator">=</span> <span class="token function">phy_write</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> MII_BMCR<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//&#x91CD;&#x7F6E;phy&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x8F6F;&#x91CD;&#x7F6E;</span>
-
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;phy_write error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-		val <span class="token operator">=</span> <span class="token function">phy_read</span><span class="token punctuation">(</span>phydev<span class="token punctuation">,</span> <span class="token number">0x9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;phy_read error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> val<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword keyword-return">return</span> ret<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-2">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<p>&#x6839;&#x636E;&#x4E0A;&#x9762;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF0C;&#x589E;&#x52A0;rx/tx delay&#x548C;&#x786E;&#x5B9A;rx clk&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x901A;&#x8FC7;&#x63A7;&#x5236;&#x53D8;&#x91CF;&#x6CD5;&#x8FDB;&#x884C;&#x53CC;&#x63D2;&#x7EBF;&#x7684;&#x7ED8;&#x5236;&#xFF0C;&#x6C42;&#x51FA;&#x4EA4;&#x53C9;&#x70B9;&#xFF0C;&#x6A2A;&#x7EB5;&#x5750;&#x6807;&#x5373;&#x4E3A;&#x6700;&#x5408;&#x9002;&#x7684;delay&#x503C;</p>
-<h2 class="mume-header" id="%E5%90%8E%E7%BB%AD%E6%80%9D%E8%B7%AF%E5%80%9F%E9%89%B4">&#x540E;&#x7EED;&#x601D;&#x8DEF;&#x501F;&#x9274;</h2>
-
-<p>&#x5728;&#x540E;&#x7EED;&#x7F51;&#x5361;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x5BF9;ping&#x5305;&#x4E22;&#x5305;&#x73B0;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x53D6;&#x8BE5;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x8FDB;&#x884C;delay&#x7684;&#x786E;&#x5B9A;&#xFF0C;&#x5E76;&#x5728;phy&#x521D;&#x59CB;&#x5316;&#x65F6;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x539F;&#x5219;&#x4E0A;tx delay&#x7684;&#x5F71;&#x54CD;&#x8F83;&#x5C0F;&#xFF0C;&#x9700;&#x5728;Mac&#x7AEF;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</p>
-<h1 class="mume-header" id="4-oran%E8%AE%BE%E5%A4%87tampstamp%E5%87%BA%E7%8E%B0%E7%B3%BB%E7%BB%9F%E6%8C%82%E6%AD%BB">4. ORAN&#x8BBE;&#x5907;tampstamp&#x51FA;&#x73B0;&#x7CFB;&#x7EDF;&#x6302;&#x6B7B;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-2">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p>ORAN&#x8BBE;&#x5907;&#x5728;&#x63A5;&#x5165;PTP&#x6E90;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6781;&#x5C0F;&#x6982;&#x7387;&#x4F1A;&#x51FA;&#x73B0;&#x8BBE;&#x5907;&#x4E22;&#x5931;tampstamp&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x5907;&#x7CFB;&#x7EDF;&#x6302;&#x6B7B;&#xFF0C;&#x91CD;&#x542F;&#x624D;&#x80FD;&#x6062;&#x590D;&#x3002;</p>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-2">&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">axienet_tx_hwtstamp</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">axienet_local</span> <span class="token operator">*</span>lp<span class="token punctuation">,</span>
-			 <span class="token keyword keyword-struct">struct</span> <span class="token class-name">aximcdma_bd</span> <span class="token operator">*</span>cur_p<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-	u32 sec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nsec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> val<span class="token punctuation">;</span>
-	u64 time64<span class="token punctuation">;</span>
-	<span class="token keyword keyword-int">int</span> err <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	u32 count<span class="token punctuation">,</span> len <span class="token operator">=</span> lp<span class="token operator">-&gt;</span>axienet_config<span class="token operator">-&gt;</span>tx_ptplen<span class="token punctuation">;</span>
-	<span class="token keyword keyword-struct">struct</span> <span class="token class-name">skb_shared_hwtstamps</span> <span class="token operator">*</span>shhwtstamps <span class="token operator">=</span>
-		<span class="token function">skb_hwtstamps</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">sk_buff</span> <span class="token operator">*</span><span class="token punctuation">)</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_skb<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	val <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_ISR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">unlikely</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_INT_RC_MASK<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-		<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Did&apos;t get FIFO tx interrupt %d\n&quot;</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>		
-
-	err <span class="token operator">=</span> <span class="token function">readl_poll_timeout_atomic</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>tx_ts_regs <span class="token operator">+</span> XAXIFIFO_TXTS_RLR<span class="token punctuation">,</span> val<span class="token punctuation">,</span>
-					<span class="token punctuation">(</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_RXFD_MASK<span class="token punctuation">)</span> <span class="token operator">&gt;=</span>
-					len<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	nsec <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	sec  <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	val <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre><p>&#x7531;&#x6E90;&#x7801;&#x903B;&#x8F91;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x8BBE;&#x5907;&#x5728;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;RX FIFO&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x503C;</p>
-<ul>
-<li>&#x8BBE;&#x5907;&#x5728;&#x6536;&#x5230;&#x56DE;PTP&#x5305;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5C1D;&#x8BD5;&#x53BB;&#x83B7;&#x53D6;tx interrupt&#xFF0C;&#x82E5;&#x6CA1;&#x6709;&#x6536;&#x5230;&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;&#xFF0C;&#x5219;&#x6253;&#x5370;&#x540E;&#x4F9D;&#x65E7;&#x8BBF;&#x95EE;FIFO&#x503C;</li>
-<li>&#x8BBE;&#x5907;&#x6536;&#x5230;RX&#x4E2D;&#x65AD;&#x4FE1;&#x53F7;&#x540E;&#xFF0C;FIFO&#x5904;&#x4E8E;&#x7B49;&#x5F85;full package&#x4E2D;&#xFF0C;&#x5BFC;&#x81F4;timeout</li>
-</ul>
-<p>&#x65E0;&#x8BBA;&#x54EA;&#x79CD;&#x72B6;&#x6001;&#x51FA;&#x53D1;&#xFF0C;&#x90FD;&#x4E0D;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x53BB;&#x8BFB;FIFO&#x5BC4;&#x5B58;&#x5668;&#x3002;&#x56E0;&#x4E3A;FIFO&#x5BC4;&#x5B58;&#x5668;&#x672A;&#x51C6;&#x5907;&#x597D;&#x65F6;&#xFF0C;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-3">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<p>&#x4EE5;&#x524D;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5728;&#x8BBE;&#x5907;&#x672A;&#x6536;&#x5230;&#x4E2D;&#x65AD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;-1&#xFF0C;&#x8865;&#x4E01;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="C" class="language-c">	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">unlikely</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_INT_RC_MASK<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-		<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Did&apos;t get FIFO tx interrupt %d\n&quot;</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>	
-		<span class="token keyword keyword-return">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-</pre><p>&#x6B64;&#x79CD;&#x8865;&#x4E01;&#x672A;&#x8003;&#x8651;&#x5230;timeout&#x60C5;&#x51B5;&#xFF0C;&#x5373;FIFO&#x5BC4;&#x5B58;&#x5668;&#x672A;&#x51C6;&#x5907;&#x597D;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F46;&#x786E;&#x5B9E;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x4E00;&#x90E8;&#x5206;&#x590D;&#x73B0;&#x6982;&#x7387;&#x3002;&#x56E0;&#x6B64;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x4FEE;&#x6B63;&#x4E3A;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">axienet_tx_hwtstamp</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">axienet_local</span> <span class="token operator">*</span>lp<span class="token punctuation">,</span>
-			 <span class="token keyword keyword-struct">struct</span> <span class="token class-name">aximcdma_bd</span> <span class="token operator">*</span>cur_p<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-	u32 sec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nsec <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> val<span class="token punctuation">;</span>
-	u64 time64<span class="token punctuation">;</span>
-	<span class="token keyword keyword-int">int</span> err <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	u32 count<span class="token punctuation">,</span> len <span class="token operator">=</span> lp<span class="token operator">-&gt;</span>axienet_config<span class="token operator">-&gt;</span>tx_ptplen<span class="token punctuation">;</span>
-	<span class="token keyword keyword-struct">struct</span> <span class="token class-name">skb_shared_hwtstamps</span> <span class="token operator">*</span>shhwtstamps <span class="token operator">=</span>
-		<span class="token function">skb_hwtstamps</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">sk_buff</span> <span class="token operator">*</span><span class="token punctuation">)</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_skb<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	val <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_ISR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">unlikely</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_INT_RC_MASK<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-		<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Did&apos;t get FIFO tx interrupt %d\n&quot;</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>		
-
-	err <span class="token operator">=</span> <span class="token function">readl_poll_timeout_atomic</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>tx_ts_regs <span class="token operator">+</span> XAXIFIFO_TXTS_RLR<span class="token punctuation">,</span> val<span class="token punctuation">,</span>
-					<span class="token punctuation">(</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_RXFD_MASK<span class="token punctuation">)</span> <span class="token operator">&gt;=</span>
-					len<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;%s: Didn&apos;t get the full timestamp packet&quot;</span><span class="token punctuation">,</span>
-			   <span class="token constant">__func__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-goto">goto</span> skb_exit<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-	
-skb_exit<span class="token operator">:</span>
-	time64 <span class="token operator">=</span> sec <span class="token operator">*</span> NS_PER_SEC <span class="token operator">+</span> nsec<span class="token punctuation">;</span>
-	<span class="token function">memset</span><span class="token punctuation">(</span>shhwtstamps<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword keyword-sizeof">sizeof</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">skb_shared_hwtstamps</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	shhwtstamps<span class="token operator">-&gt;</span>hwtstamp <span class="token operator">=</span> <span class="token function">ns_to_ktime</span><span class="token punctuation">(</span>time64<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre><p>&#x4FEE;&#x6539;&#x903B;&#x8F91;&#x4E3A;&#xFF1A;&#x5F53;&#x8BBE;&#x5907;&#x7684;FIFO&#x5BC4;&#x5B58;&#x5668;&#x672A;&#x51C6;&#x5907;&#x597D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;(&#x4E0D;&#x5206;&#x4F55;&#x79CD;&#x60C5;&#x51B5;&#x5BFC;&#x81F4;)&#xFF0C;&#x8BBE;&#x5907;&#x653E;&#x5F03;&#x8BE5;&#x6B21;&#x7EA0;&#x504F;&#x64CD;&#x4F5C;&#xFF0C;&#x4E3A;packet&#x5305;&#x8865;&#x5145;timestamp&#x4E3A;0.</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-1">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x540E;&#x7EED;ORAN&#x8BBE;&#x5907;&#x4EE5;&#x65B0;&#x5E95;&#x5C42;&#x4E3A;&#x6D4B;&#x8BD5;&#x7248;&#x672C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x63A5;&#x5165;PTP&#x6E90;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E24;&#x4E2A;&#x6708;&#x672A;&#x590D;&#x73B0;&#x8BE5;&#x60C5;&#x51B5;&#x3002;&#x4FEE;&#x6539;&#x524D;&#x7684;&#x6982;&#x7387;&#x4E3A;1&#x5468;&#x7A33;&#x5B9A;&#x590D;&#x73B0;&#x4E00;&#x6B21;&#x3002;</p>
-<h1 class="mume-header" id="5-oran%E8%AE%BE%E5%A4%87ptp%E9%A9%B1%E5%8A%A8%E5%8F%8Aptp%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1">5. ORAN&#x8BBE;&#x5907;PTP&#x9A71;&#x52A8;&#x53CA;PTP&#x63A7;&#x5236;&#x903B;&#x8F91;&#x8BBE;&#x8BA1;</h1>
-
-<h2 class="mume-header" id="%E9%A2%84%E7%A0%94%E9%9C%80%E6%B1%82">&#x9884;&#x7814;&#x9700;&#x6C42;</h2>
-
-<p>&#x539F;&#x6709;1588&#x65F6;&#x949F;&#x540C;&#x6B65;&#x65B9;&#x6848;&#x7CBE;&#x5EA6;(&#xB1;80ns)&#x4E0D;&#x6EE1;&#x8DB3;&#x73B0;&#x6709;&#x9879;&#x76EE;&#x9700;&#x6C42;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7684;&#x7B97;&#x6CD5;&#x63A7;&#x5236;&#x65B9;&#x6848;&#x5BF9;&#x65F6;&#x949F;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#xFF0C;&#x7CBE;&#x5EA6;&#x8981;&#x6C42;&#x5728;&#xB1;20ns&#x5185;</p>
-<h2 class="mume-header" id="%E5%8E%9F%E6%9C%89%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90">&#x539F;&#x6709;&#x8BBE;&#x8BA1;&#x5206;&#x6790;</h2>
-
-<p>&#x539F;&#x6709;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#x903B;&#x8F91;&#x4E3A;&#xFF1A;FPGA&#x7684;timer&#x5BC4;&#x5B58;&#x5668;&#x6BCF;1PPS&#x5468;&#x671F;&#x91CC;&#x4F1A;&#x7ED9;ARM&#x8FD9;&#x8FB9;&#x53D1;&#x9001;&#x65F6;&#x949F;&#xFF0C;&#x7136;&#x540E;&#x7531;ARM&#x8FD9;&#x8FB9;&#x901A;&#x8FC7;PTP&#x534F;&#x8BAE;&#x5BF9;timer&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x6821;&#x51C6;<br>
-&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
-<ul>
-<li>&#x5229;&#x7528;&#x79D2;&#x8109;&#x51B2;&#x6821;&#x51C6;&#x65F6;&#x95F4;&#x6821;&#x51C6;&#x5468;&#x671F;&#x592A;&#x957F;&#xFF08;&#x6700;&#x4F4E;&#x6821;&#x51C6;&#x5468;&#x671F;1S&#xFF09;</li>
-<li>&#x5229;&#x7528;&#x79D2;&#x8109;&#x51B2;&#x6821;&#x51C6;&#x6821;&#x51C6;&#x94FE;&#x6761;&#x8FC7;&#x957F;&#xFF08;1588-&gt;&#x65F6;&#x95F4;&#x6233;-&gt;&#x79D2;&#x8109;&#x51B2;-&gt;&#x79D2;&#x8109;&#x51B2;&#x7EDF;&#x8BA1;-&gt;&#x9891;&#x7387;&#x8C03;&#x6574;&#xFF09;</li>
-<li>PTP&#x9A71;&#x52A8;&#x4E25;&#x91CD;&#x4F9D;&#x8D56;xilinx PTP&#x6A21;&#x5757;&#x9A71;&#x52A8;&#xFF0C;&#x4E0D;&#x7B26;&#x5408;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x3002;</li>
-</ul>
-<h2 class="mume-header" id="%E7%90%86%E8%AE%BA%E8%AE%BE%E8%AE%A1">&#x7406;&#x8BBA;&#x8BBE;&#x8BA1;</h2>
+<h2 class="mume-header" id="rootfs%E7%BC%96%E8%AF%91">rootfs&#x7F16;&#x8BD1;</h2>
 
 <ul>
-<li>&#x7531;PTP&#x534F;&#x8BAE;&#x83B7;&#x53D6;&#x5230;&#x6570;&#x636E;&#x4F20;&#x8F93;delay&#x548C;&#x9891;&#x504F;offset</li>
-<li>&#x4F7F;&#x7528;PI&#x7B97;&#x6CD5;&#x5BF9;delay&#x548C;offset&#x8FDB;&#x884C;&#x63A7;&#x5236;&#x4F18;&#x5316;&#xFF0C;&#x964D;&#x4F4E;&#x7CFB;&#x7EDF;&#x7684;&#x6CE2;&#x52A8;&#x548C;&#x6296;&#x52A8;&#xFF0C;&#x6D88;&#x9664;&#x7CFB;&#x7EDF;&#x7684;&#x7A33;&#x6001;&#x8BEF;&#x5DEE;&#xFF0C;&#x51CF;&#x5C0F;&#x63A7;&#x5236;&#x5668;&#x7684;&#x8FC7;&#x51B2;</li>
-<li>&#x5C06;delay&#x548C;offset&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x5F97;&#x51FA;&#x9891;&#x504F;freq&#x901A;&#x8FC7;PTP&#x5E95;&#x5C42;&#x9A71;&#x52A8;&#x5199;&#x5165;FPGA timer&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x6821;&#x51C6;</li>
-<li>&#x7531;&#x4E8E;FPGA&#x7684;timer&#x662F;&#x4F7F;&#x7528;N850&#x6676;&#x632F;&#x5F53;&#x505A;&#x8F93;&#x5165;clk,&#x56E0;&#x6B64;&#x8FD8;&#x9700;&#x5C06;freq&#x901A;&#x8FC7;&#x6EE4;&#x6CE2;&#x5668;&#x5904;&#x7406;&#x540E;&#x5BF9;N850&#x8FDB;&#x884C;&#x8C03;&#x9891;&#xFF0C;&#x8FBE;&#x5230;&#x6821;&#x51C6;timer&#x65F6;&#x949F;&#x6E90;&#x7684;&#x76EE;&#x7684;</li>
+<li>rootfs&#x53EA;&#x662F;&#x547D;&#x4EE4;&#x96C6;&#x5408;&#x4F53;&#x548C;&#x811A;&#x672C;&#x6587;&#x4EF6;</li>
+<li>petalinux&#x589E;&#x51CF;&#x547D;&#x4EE4;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;busybox&#x547D;&#x4EE4;&#x5E93;&#xFF0C;&#x5728;busybox&#x4E2D;&#x9009;&#x5B9A;&#x9700;&#x8981;&#x7684;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x66FF;&#x6362;&#x3002;</li>
+<li>&#x811A;&#x672C;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x6211;&#x76F4;&#x63A5;&#x501F;&#x7528;A3&#x7684;rootfs&#x6587;&#x4EF6;&#xFF0C;&#x6682;&#x672A;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x3002;</li>
+<li>&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;/shell&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x7B49;&#xFF0C;&#x5747;&#x53EF;&#x901A;&#x8FC7;&#x4FEE;&#x6539;passwd/host&#x7B49;&#x5B9E;&#x73B0;&#xFF08;&#x5DF2;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#xFF09;</li>
 </ul>
-<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</h2>
-
-<p>&#x4F7F;&#x7528;&#x65B0;&#x7684;PTP&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#xFF0C;M2/A3&#x7B49;ORAN&#x8BBE;&#x5907;&#x7684;PTP&#x7CBE;&#x5EA6;&#x80FD;&#x8FBE;&#x5230;&#xB1;10ns&#xFF0C;&#x6EE1;&#x8DB3;&#x9884;&#x7814;&#x9879;&#x76EE;&#x9884;&#x671F;&#x9700;&#x6C42;&#xFF0C;&#x4E14;rms&#x503C;&#x8F83;&#x4E3A;&#x7A33;&#x5B9A;&#x3002;</p>
-<h1 class="mume-header" id="6-ptp%E4%B8%A2%E5%A4%B1%E6%BA%90%E6%83%85%E5%86%B5%E4%B8%8B%E8%BF%9B%E8%A1%8C%E7%B2%BE%E5%BA%A6%E4%BF%9D%E6%8C%81">6. PTP&#x4E22;&#x5931;&#x6E90;&#x60C5;&#x51B5;&#x4E0B;&#x8FDB;&#x884C;&#x7CBE;&#x5EA6;&#x4FDD;&#x6301;</h1>
-
-<h2 class="mume-header" id="%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">&#x9700;&#x6C42;&#x5206;&#x6790;</h2>
-
-<p>ORAN&#x8BBE;&#x5907;&#x5728;&#x4E22;&#x5931;PTP master&#x6E90;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x7531;&#x4E8E;&#x6CA1;&#x6CD5;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x6821;&#x51C6;&#xFF0C;&#x5BFC;&#x81F4;&#x65F6;&#x95F4;&#x4E00;&#x957F;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;N850&#x65F6;&#x949F;&#x6F02;&#x79FB;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#xFF0C;timer&#x7684;&#x65F6;&#x949F;&#x9891;&#x504F;&#x8F83;&#x5927;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF">&#x89E3;&#x51B3;&#x601D;&#x8DEF;</h2>
-
-<p>&#x4F7F;&#x7528;N850&#x4E2D;&#x7684;holdover&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x540C;&#x6B65;&#x6E90;&#x5931;&#x6548;&#x65F6;&#xFF0C;&#x65F6;&#x949F;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4F9D;&#x9760;&#x81EA;&#x8EAB;&#x7684;&#x672C;&#x5730;&#x632F;&#x8361;&#x5668;&#x7EF4;&#x6301;&#x65F6;&#x949F;&#x9891;&#x7387;&#x548C;&#x76F8;&#x4F4D;&#x3002;</p>
-<h2 class="mume-header" id="%E7%AE%97%E6%B3%95%E8%B0%83%E8%AF%95">&#x7B97;&#x6CD5;&#x8C03;&#x8BD5;</h2>
+<h2 class="mume-header" id="%E8%AE%BE%E5%A4%87%E6%A0%91%E7%BC%96%E8%AF%91">&#x8BBE;&#x5907;&#x6811;&#x7F16;&#x8BD1;</h2>
 
 <ul>
-<li>&#x5229;&#x7528;&#x5408;&#x9002;&#x7684;&#x7B97;&#x6CD5;&#x5BF9;&#x6700;&#x8FD1;&#x7684;freq&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;&#xFF0C;&#x9884;&#x5224;&#x51FA;&#x5408;&#x9002;&#x7684;freq</li>
-<li>&#x5C06;&#x8BE5;freq&#x5199;&#x5165;DPLL0&#x548C;DPLL1&#x7684;holdover&#x63A7;&#x5236;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#xFF0C;&#x5730;&#x5740;&#x5206;&#x522B;&#x4E3A;0x156&#x3001;0x1d6</li>
-<li>&#x7CFB;&#x7EDF;&#x4E22;&#x5931;&#x540C;&#x6B65;&#x6E90;&#x4E4B;&#x540E;&#xFF0C;&#x7ACB;&#x9A6C;&#x5F00;&#x542F;holdover&#x529F;&#x80FD;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;0x124&#x548C;0x1a4&#x5BC4;&#x5B58;&#x5668;&#x8BF4;&#x660E;</li>
+<li>&#x76EE;&#x524D;&#x6211;&#x662F;&#x5C06;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;FPGA&#x7684;xsa&#x6587;&#x4EF6;&#x79FB;&#x690D;&#x5230;arch/arm64/boot/dts&#x4E2D;</li>
+<li>&#x901A;&#x8FC7;&#x8BBE;&#x5907;&#x6811;&#x4E2D;&#x7684;include&#x94FE;&#x63A5;&#x6210;&#x4E00;&#x4E2A;system.dts</li>
+<li>&#x548C;linux&#x5185;&#x6838;&#x4E00;&#x8D77;&#x7F16;&#x8BD1;&#x6210;system.dtb&#xFF0C;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x5C31;&#x5728;arch/arm64/boot/dts</li>
 </ul>
-<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-1">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</h2>
-
-<p>&#x5728;&#x65AD;&#x5F00;&#x8BBE;&#x5907;&#x5916;&#x90E8;&#x540C;&#x6B65;&#x65F6;&#x949F;&#x6E90;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x65F6;&#x949F;(N850)&#x7684;&#x65F6;&#x949F;&#x504F;&#x79FB;&#x80FD;&#x4FDD;&#x6301;&#x7A33;&#x5B9A;&#x51E0;&#x5206;&#x949F;&#xFF0C;&#x7136;&#x540E;&#x9010;&#x6E10;&#x6269;&#x5927;&#xFF0C;&#x4F46;&#x901F;&#x5EA6;&#x660E;&#x663E;&#x8F83;&#x4E4B;&#x524D;&#x7F13;&#x548C;&#x4E86;&#x8BB8;&#x591A;&#x3002;</p>
-<h1 class="mume-header" id="7-ptp-master%E8%B7%B3%E5%8F%98%E5%AF%BC%E8%87%B4rms%E6%94%B6%E6%95%9B%E5%A4%AA%E6%85%A2">7. PTP master&#x8DF3;&#x53D8;&#x5BFC;&#x81F4;rms&#x6536;&#x655B;&#x592A;&#x6162;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E5%88%86%E6%9E%90">&#x73B0;&#x8C61;&#x5206;&#x6790;</h2>
-
-<p>&#x6D4B;&#x8BD5;&#x4E2D;&#x53D1;&#x73B0;&#xFF0C;&#x4E0D;&#x8BBA;&#x662F;&#x4E4B;&#x524D;&#x8BBE;&#x5907;&#x8FD8;&#x662F;&#x65B0;&#x8BBE;&#x8BA1;&#x8BBE;&#x5907;&#xFF0C;&#x5747;&#x4F1A;&#x51FA;&#x73B0;&#x5F53;master&#x8BBE;&#x5907;&#x81EA;&#x8EAB;&#x65F6;&#x949F;&#x548C;GPS&#x8FDB;&#x884C;&#x540C;&#x6B65;&#x540E;&#xFF0C;&#x53D1;&#x751F;&#x8DE8;&#x5EA6;&#x7279;&#x522B;&#x5927;&#x7684;&#x8DF3;&#x53D8;&#xFF0C;&#x8BBE;&#x5907;&#x7684;PTP&#x540C;&#x6B65;master&#x7684;&#x65F6;&#x949F;&#x6E90;&#x4F1A;&#x7279;&#x522B;&#x6162;&#xFF0C;&#x4E00;&#x76F4;&#x4EE5;&#x6700;&#x5927;&#x7684;&#x8C03;&#x9891;&#x5E45;&#x5EA6;&#x4E5F;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x540C;&#x6B65;(&#x540C;&#x6B65;&#x65F6;&#x95F4;&#x770B;master&#x7684;&#x8DF3;&#x53D8;&#x5E45;&#x5EA6;)</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-1">&#x89E3;&#x51B3;&#x601D;&#x8DEF;</h2>
-
-<p>&#x7ECF;&#x8FC7;&#x591A;&#x6B21;&#x6D4B;&#x8BD5;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF0C;&#x662F;&#x7531;&#x4E8E;ORAN&#x8BBE;&#x5907;&#x65F6;&#x949F;&#x6E90;&#x8FDB;&#x884C;&#x8C03;&#x9891;&#x65F6;&#xFF0C;&#x9047;&#x5230;master&#x8DF3;&#x53D8;&#x5E45;&#x5EA6;&#x8FC7;&#x5927;&#x5BFC;&#x81F4;&#x540C;&#x6B65;&#x65F6;&#x95F4;&#x8F83;&#x957F;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x6362;&#x79CD;&#x601D;&#x8DEF;&#xFF0C;&#x5F53;PTP&#x6536;&#x5230;&#x540C;&#x6B65;&#x5305;&#x65F6;&#x53D1;&#x73B0;&#x65F6;&#x95F4;&#x8DF3;&#x53D8;&#x5E45;&#x5EA6;&#x8FC7;&#x5927;&#x65F6;(&#x8FD9;&#x4E2A;offset&#x503C;&#x548C;&#x9886;&#x5BFC;&#x5546;&#x91CF;&#x8FC7;&#x4E3A;100000)&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x540C;&#x6B65;&#x65F6;&#x95F4;&#x5199;&#x5165;&#x5230;FPGA timer&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#xFF0C;&#x76F4;&#x63A5;&#x65B0;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF0C;&#x7136;&#x540E;dispatch&#xFF0C;&#x518D;&#x8FDB;&#x884C;port&#x540C;&#x6B65;&#xFF0C;&#x7136;&#x540E;PTP&#x518D;&#x8FDB;&#x884C;&#x540C;&#x6B65;</p>
-<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-2">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</h2>
-
-<div align="center">
-<p><img src="design_picture/ptp_jump_test.png" alt="bd"></p>
-</div>
-&#x5F53;du&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x4EBA;&#x4E3A;&#x8BBE;&#x5B9A;&#x8DF3;&#x53D8;&#x540E;&#xFF0C;ORAN&#x8BBE;&#x5907;&#x7684;PTP&#x4F1A;&#x7ACB;&#x9A6C;&#x8BC6;&#x522B;&#x51FA;&#x8DF3;&#x53D8;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;dispatch&#x7684;&#x540C;&#x65F6;&#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x518D;&#x6B21;port&#x540C;&#x6B65;&#xFF0C;&#x518D;&#x6B21;&#x540C;&#x6B65;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x4E0D;&#x8D85;&#x8FC7;1s&#x3002;
-&#x867D;&#x7136;&#x8FD9;&#x662F;&#x7531;&#x6E90;master&#x7684;&#x5F02;&#x5E38;&#x5BFC;&#x81F4;&#x8BBE;&#x5907;PTP&#x5F02;&#x5E38;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x5230;&#x5B9E;&#x65F6;&#x540C;&#x6B65;&#xFF0C;&#x4E0D;&#x53D7;&#x5916;&#x754C;&#x5F71;&#x54CD;&#xFF0C;&#x5F3A;&#x58EE;&#x81EA;&#x8EAB;&#x903B;&#x8F91;&#x3002;
-<h1 class="mume-header" id="8-ptp%E7%8A%B6%E6%80%81%E4%B8%8A%E6%8A%A5%E5%8F%8Aweb%E7%AB%AF%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE">8. PTP&#x72B6;&#x6001;&#x4E0A;&#x62A5;&#x53CA;web&#x7AEF;&#x53C2;&#x6570;&#x914D;&#x7F6E;</h1>
-
-<h2 class="mume-header" id="%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90-1">&#x9700;&#x6C42;&#x5206;&#x6790;</h2>
-
-<p>ORAN&#x8BBE;&#x5907;&#x9700;&#x8981;web&#x7AEF;&#x5BF9;PTP&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x3001;PTP&#x6A21;&#x5F0F;&#x7B49;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x5E76;&#x9700;&#x8981;&#x5B9E;&#x65F6;&#x83B7;&#x53D6;PTP&#x72B6;&#x6001;&#x548C;&#x6536;&#x655B;&#x60C5;&#x51B5;(rms)</p>
-<h2 class="mume-header" id="%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F">&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</h2>
-
-<p>&#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x673A;&#x5236;&#xFF0C;&#x5B8C;&#x6210;&#x5E94;&#x7528;&#x5C42;&#x5BF9;PTP&#x63A7;&#x5236;&#x7A0B;&#x5E8F;&#x7684;&#x6307;&#x4EE4;&#x4E0B;&#x8FBE;&#x53CA;&#x53C2;&#x6570;&#x53CD;&#x9988;&#x3002;</p>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0">&#x6E90;&#x7801;&#x5B9E;&#x73B0;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-struct">struct</span> <span class="token class-name">ptp_config</span>
-<span class="token punctuation">{</span>
-   <span class="token keyword keyword-short">short</span> <span class="token keyword keyword-int">int</span> delay_asymmetry<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> two_step_flag<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> priority1<span class="token punctuation">;</span> 
-   <span class="token keyword keyword-char">char</span> priority2<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> clockAccuracy<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> timeSource<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> domain_number<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> clock_classes<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span> ptp_profile<span class="token punctuation">;</span>
-   <span class="token keyword keyword-char">char</span>  restart<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre><pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-struct">struct</span> <span class="token class-name">ptp_config</span> <span class="token operator">*</span> <span class="token function">get_ppt_cfg_from_arm</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-	<span class="token keyword keyword-int">int</span> ptp_cfg_shm_id <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-static">static</span> <span class="token keyword keyword-struct">struct</span> <span class="token class-name">ptp_config</span> <span class="token operator">*</span>ptp_cfg_shm_addr<span class="token punctuation">;</span>
-
-	ptp_cfg_shm_id <span class="token operator">=</span> <span class="token function">shmget</span><span class="token punctuation">(</span><span class="token number">0x1243</span><span class="token punctuation">,</span> <span class="token keyword keyword-sizeof">sizeof</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">ptp_config</span><span class="token punctuation">)</span><span class="token punctuation">,</span> IPC_CREAT <span class="token operator">|</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> ptp_cfg_shm_id<span class="token punctuation">)</span>
-	<span class="token punctuation">{</span>
-	    <span class="token keyword keyword-return">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	ptp_cfg_shm_addr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">ptp_config</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">shmat</span><span class="token punctuation">(</span>ptp_cfg_shm_id<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span><span class="token punctuation">)</span>ptp_cfg_shm_addr<span class="token punctuation">)</span>
-	<span class="token punctuation">{</span>
-		ptp_cfg_shm_id <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-		<span class="token keyword keyword-return">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword keyword-return">return</span> ptp_cfg_shm_addr<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span>
-</pre><p>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x6CA1;&#x5565;&#x597D;&#x8BF4;&#x7684;&#xFF0C;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x5C06;PTP&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4E0E;ARM&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;&#x91CD;&#x70B9;&#x662F;PTP&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x53CA;&#x6A21;&#x5F0F;&#x8C03;&#x63A7;&#x903B;&#x8F91;(&#x4E0D;&#x7EC6;&#x8BB2;&#xFF0C;&#x7565;).</p>
-<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-3">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</h2>
-
-<p>web&#x7AEF;&#x5237;&#x65B0;&#x6570;&#x636E;&#x5BF9;&#x6BD4;PTP&#x72B6;&#x6001;&#x6253;&#x5370;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x6A21;&#x5F0F;&#x8C03;&#x6574;&#x4E5F;&#x5DF2;&#x8FBE;&#x9884;&#x671F;&#x3002;</p>
-<h1 class="mume-header" id="9-m2ru%E7%AD%89oran%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8ecpri%E7%BD%91%E5%8D%A1%E4%B8%A2ptp%E9%80%9A%E4%BF%A1%E5%8C%85">9. M2RU&#x7B49;ORAN&#x8BBE;&#x5907;&#x9A71;&#x52A8;ecpri&#x7F51;&#x5361;&#x4E22;ptp&#x901A;&#x4FE1;&#x5305;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-3">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p>&#x8BBE;&#x5907;log&#x6253;&#x5370;&#x5982;&#x4E0B;&#xFF1A;xilinx_axienet a0020000.ethernet: Mismatching 2-step tag. Got 0&#xFF0C;&#x7CFB;&#x7EDF;PTP&#x4E0D;&#x7A33;&#x5B9A;&#x3002;</p>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-3">&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c">	val <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_TAG_MASK<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> XAXIFIFO_TXTS_TAG_SHIFT<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment">//		count = axienet_txts_ior(lp, XAXIFIFO_TXTS_RFO);</span>
-		<span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			nsec <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			sec  <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			val <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			val <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_TAG_MASK<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span>
-				XAXIFIFO_TXTS_TAG_SHIFT<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-			<span class="token function">dev_dbg</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;tx_stamp:[%04x] %04x %u %9u\n&quot;</span><span class="token punctuation">,</span>
-				cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">,</span> val<span class="token punctuation">,</span> sec<span class="token punctuation">,</span> nsec<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">)</span><span class="token punctuation">)</span>
-				<span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>
-			count <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RFO<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span> 
-		<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Mismatching 2-step tag. Got %x&quot;</span><span class="token punctuation">,</span>
-				 val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Expected %x\n&quot;</span><span class="token punctuation">,</span>
-				 cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-</pre><p>&#x7ECF;&#x5206;&#x6790;&#xFF0C;val&#x53C2;&#x91CF;&#x6709;&#x6548;&#x503C;&#x4E3A;&#x4F4E;16&#x4F4D;&#xFF0C;&#x4F46;ptp_tx_ts_tag&#x503C;&#x662F;&#x6709;32&#x4F4D;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x5904;&#x5E94;&#x8BE5;&#x4E3A;xilinx&#x9A71;&#x52A8;&#x7684;bug&#xFF0C;&#x5E94;&#x8BE5;&#x4E88;&#x4EE5;&#x4FEE;&#x6B63;&#x4E3A;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info="C" class="language-c">	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag <span class="token operator">&amp;</span> <span class="token number">0xffff</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment">//		count = axienet_txts_ior(lp, XAXIFIFO_TXTS_RFO);</span>
-		<span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			nsec <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			sec  <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			val <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RXFD<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			val <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>val <span class="token operator">&amp;</span> XAXIFIFO_TXTS_TAG_MASK<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span>
-				XAXIFIFO_TXTS_TAG_SHIFT<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-			<span class="token function">dev_dbg</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;tx_stamp:[%04x] %04x %u %9u\n&quot;</span><span class="token punctuation">,</span>
-				cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">,</span> val<span class="token punctuation">,</span> sec<span class="token punctuation">,</span> nsec<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag <span class="token operator">&amp;</span> <span class="token number">0xffff</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-				<span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>
-			count <span class="token operator">=</span> <span class="token function">axienet_txts_ior</span><span class="token punctuation">(</span>lp<span class="token punctuation">,</span> XAXIFIFO_TXTS_RFO<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span> 
-		<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token punctuation">(</span>cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag <span class="token operator">&amp;</span> <span class="token number">0xffff</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Mismatching 2-step tag. Got %x&quot;</span><span class="token punctuation">,</span>
-				 val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-			<span class="token function">dev_info</span><span class="token punctuation">(</span>lp<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Expected %x\n&quot;</span><span class="token punctuation">,</span>
-				 cur_p<span class="token operator">-&gt;</span>ptp_tx_ts_tag<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-2">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x7ECF;&#x4FEE;&#x6539;&#x540E;&#xFF0C;M2RU ORAN&#x8BBE;&#x5907;&#x7A33;&#x5B9A;&#x6027;&#x8DD1;&#x4E86;&#x4E24;&#x5468;&#xFF0C;&#x672A;&#x590D;&#x73B0;&#xFF0C;&#x81F3;&#x4ECA;&#x672A;&#x63D0;&#x51FA;&#x8BE5;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#x3002;&#x4E4B;&#x524D;&#x590D;&#x73B0;&#x6982;&#x7387;&#x4E3A;&#x4E24;&#x5929;&#x4E00;&#x6B21;&#x3002;</p>
-<h1 class="mume-header" id="10-a3-oran%E7%AD%89%E7%AC%AC%E4%B8%89%E5%B9%B3%E5%8F%B0oran%E8%AE%BE%E5%A4%8725g%E7%BD%91%E5%8F%A3%E6%8C%82%E6%AD%BB%E9%97%AE%E9%A2%98">10. A3-ORAN&#x7B49;&#x7B2C;&#x4E09;&#x5E73;&#x53F0;ORAN&#x8BBE;&#x5907;25G&#x7F51;&#x53E3;&#x6302;&#x6B7B;&#x95EE;&#x9898;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-4">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p>A3-ORAN&#x8BBE;&#x5907;&#x5728;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;ecpri&#x7F51;&#x5361;&#x5207;&#x6362;&#x5230;25G&#x901F;&#x7387;&#x65F6;&#xFF0C;&#x6709;&#x5C0F;&#x6982;&#x7387;&#x60C5;&#x51B5;&#x51FA;&#x73B0;&#x7F51;&#x5361;&#x6302;&#x6B7B;&#x73B0;&#x8C61;</p>
-<h2 class="mume-header" id="%E9%97%AE%E9%A2%98%E5%AE%9A%E4%BD%8D">&#x95EE;&#x9898;&#x5B9A;&#x4F4D;</h2>
-
-<p>&#x7531;&#x4E8E;&#x662F;&#x5C0F;&#x6982;&#x7387;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E0D;&#x6613;&#x590D;&#x73B0;&#xFF0C;&#x56E0;&#x6B64;&#x6309;&#x7167;&#x5207;&#x6362;25G&#x6D41;&#x7A0B;&#xFF0C;&#x505A;&#x81EA;&#x9002;&#x5E94;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E0D;&#x518D;&#x91C7;&#x7528;&#x8BBE;&#x5907;&#x91CD;&#x542F;&#x8FDB;&#x884C;&#x590D;&#x73B0;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;<br>
-&#x7ECF;&#x8FC7;&#x5B9A;&#x4F4D;&#xFF0C;&#x5206;&#x6790;&#x51FA;&#x4E43;&#x662F;xilinx&#x9A71;&#x52A8;&#x901A;&#x8FC7;&#x8BBF;&#x95EE;ecpri&#x7F51;&#x5361;&#x72B6;&#x6001;&#x5BC4;&#x5B58;&#x5668;&#x83B7;&#x53D6;&#x7F51;&#x5361;link&#x72B6;&#x6001;&#x65F6;&#x6982;&#x7387;&#x6027;&#x51FA;&#x73B0;bus error.&#x901A;&#x8FC7;FPGA Jtag&#x6293;&#x5305;<br>
-&#x53D1;&#x73B0;&#x6570;&#x636E;&#x4E0B;&#x8FBE;&#x5230;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#xFF0C;&#x4F46;&#x8BE5;&#x5BC4;&#x5B58;&#x5668;&#x5B58;&#x5728;&#x53EF;&#x80FD;&#x7F3A;&#x4E4F;&#x8BFB;&#x54CD;&#x5E94;&#x3002;&#x7531;&#x4E8E;&#x8BE5;&#x5BC4;&#x5B58;&#x5668;&#x662F;xilinx&#x7684;&#x9ED1;&#x76D2;&#x5B50;&#xFF0C;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x5B9A;&#x4F4D;&#x5230;&#x6700;&#x7EC8;&#x95EE;&#x9898;&#xFF0C;&#x6545;<br>
-&#x6839;&#x636E;xilinx&#x82AF;&#x7247;&#x624B;&#x518C;&#xFF0C;&#x4F7F;&#x7528;&#x53E6;&#x4E00;link&#x72B6;&#x6001;&#x5BC4;&#x5B58;&#x5668;&#x4E88;&#x4EE5;&#x529F;&#x80FD;&#x66FF;&#x6362;&#x3002;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-3">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x4F7F;&#x7528;&#x65B0;&#x7684;&#x5E95;&#x5C42;&#x540E;&#xFF0C;&#x672A;&#x53D1;&#x73B0;ecpri&#x7F51;&#x5361;&#x7C7B;&#x4F3C;&#x5361;&#x6B7B;&#x95EE;&#x9898;&#xFF0C;bug&#x4E88;&#x4EE5;&#x4FEE;&#x590D;&#x3002;</p>
-<h1 class="mume-header" id="11-fhm%E9%A2%84%E7%A0%94%E9%A1%B9%E7%9B%AE">11. FHM&#x9884;&#x7814;&#x9879;&#x76EE;</h1>
-
-<h2 class="mume-header" id="%E9%92%88%E5%AF%B9axi_dma%E9%A9%B1%E5%8A%A8%E8%BF%9B%E8%A1%8C%E7%BC%96%E5%86%99%E5%B9%B6%E6%8F%90%E4%BE%9B%E6%BA%90%E7%A0%81%E6%94%AF%E6%8C%81">&#x9488;&#x5BF9;axi_dma&#x9A71;&#x52A8;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#x5E76;&#x63D0;&#x4F9B;&#x6E90;&#x7801;&#x652F;&#x6301;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-static">static</span> <span class="token keyword keyword-int">int</span> <span class="token function">axidma_probe</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">platform_device</span> <span class="token operator">*</span>pdev<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword keyword-int">int</span> rc<span class="token punctuation">;</span>
-    <span class="token keyword keyword-struct">struct</span> <span class="token class-name">axidma_device</span> <span class="token operator">*</span>axidma_dev<span class="token punctuation">;</span>
-
-    axidma_dev <span class="token operator">=</span> <span class="token function">kmalloc</span><span class="token punctuation">(</span><span class="token keyword keyword-sizeof">sizeof</span><span class="token punctuation">(</span><span class="token operator">*</span>axidma_dev<span class="token punctuation">)</span><span class="token punctuation">,</span> GFP_KERNEL<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>axidma_dev <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">axidma_err</span><span class="token punctuation">(</span><span class="token string">&quot;Unable to allocate the AXI DMA device structure.\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-return">return</span> <span class="token operator">-</span>ENOMEM<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    axidma_dev<span class="token operator">-&gt;</span>pdev <span class="token operator">=</span> pdev<span class="token punctuation">;</span>
-  
-    rc <span class="token operator">=</span> <span class="token function">axidma_dma_init</span><span class="token punctuation">(</span>pdev<span class="token punctuation">,</span> axidma_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rc <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-goto">goto</span> free_axidma_dev<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    axidma_dev<span class="token operator">-&gt;</span>chrdev_name <span class="token operator">=</span> chrdev_name<span class="token punctuation">;</span>
-    axidma_dev<span class="token operator">-&gt;</span>minor_num <span class="token operator">=</span> minor_num<span class="token punctuation">;</span>
-    axidma_dev<span class="token operator">-&gt;</span>num_devices <span class="token operator">=</span> NUM_DEVICES<span class="token punctuation">;</span>
-   
-    rc <span class="token operator">=</span> <span class="token function">axidma_chrdev_init</span><span class="token punctuation">(</span>axidma_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rc <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword keyword-goto">goto</span> destroy_dma_dev<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token function">dev_set_drvdata</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>pdev<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> axidma_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-destroy_dma_dev<span class="token operator">:</span>
-    <span class="token function">axidma_dma_exit</span><span class="token punctuation">(</span>axidma_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-free_axidma_dev<span class="token operator">:</span>
-    <span class="token function">kfree</span><span class="token punctuation">(</span>axidma_dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-return">return</span> <span class="token operator">-</span>ENOSYS<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><p>&#x4EFF;&#x7167;&#x5185;&#x6838;&#x9A71;&#x52A8;&#x53CA;xilinx&#x82AF;&#x7247;&#x624B;&#x518C;&#x5BF9;axi_dma&#x9A71;&#x52A8;&#x8FDB;&#x884C;&#x7F16;&#x5199;</p>
-<h2 class="mume-header" id="%E9%92%88%E5%AF%B9eth_oran%E7%BD%91%E5%8D%A1%E7%8A%B6%E6%80%81%E6%B3%A8%E5%86%8C%E4%B8%AD%E6%96%AD%E8%BF%9B%E8%A1%8C%E7%9B%91%E6%B5%8B">&#x9488;&#x5BF9;eth_oran&#x7F51;&#x5361;&#x72B6;&#x6001;&#x6CE8;&#x518C;&#x4E2D;&#x65AD;&#x8FDB;&#x884C;&#x76D1;&#x6D4B;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-void">void</span> <span class="token function">ptp_interrupt_call_back</span><span class="token punctuation">(</span><span class="token keyword keyword-char">char</span><span class="token operator">*</span> base_addr<span class="token punctuation">,</span><span class="token keyword keyword-char">char</span> <span class="token operator">*</span>name<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">ptp_interrupt_clr</span><span class="token punctuation">(</span>PTP_MASK_LINK_UP<span class="token punctuation">,</span>base_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;%s:PTP_MASK_LINK_UP\n&quot;</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">ptp_interrupt_clr</span><span class="token punctuation">(</span>PTP_MASK_LINK_DOWN<span class="token punctuation">,</span>base_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;%s:PTP_MASK_LINK_DOWN\n&quot;</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">ptp_interrupt_clr</span><span class="token punctuation">(</span>PTP_MASK_SYNC_OK<span class="token punctuation">,</span>base_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;PTP_MASK_SYNC_OK&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token function">ptp_interrupt_clr</span><span class="token punctuation">(</span>PTP_MASK_REQ_TIME_OUT<span class="token punctuation">,</span>base_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;PTP_MASK_REQ_TIME_OUT&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-<span class="token keyword keyword-static">static</span> <span class="token class-name">irqreturn_t</span> <span class="token function">sunwave_ptp_timer_isr</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> irq<span class="token punctuation">,</span> <span class="token keyword keyword-void">void</span> <span class="token operator">*</span>priv<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-  <span class="token keyword keyword-struct">struct</span> <span class="token class-name">sunwave_ptp_ctrl</span> <span class="token operator">*</span>timer <span class="token operator">=</span> priv<span class="token punctuation">;</span>
-  
-  <span class="token function">ptp_interrupt_call_back</span><span class="token punctuation">(</span>timer<span class="token operator">-&gt;</span>baseaddr<span class="token punctuation">,</span>timer<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token keyword keyword-return">return</span> IRQ_HANDLED<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword keyword-static">static</span> <span class="token keyword keyword-int">int</span> <span class="token function">sunwave_ptp_ctrl_request_irq</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">sunwave_ptp_ctrl</span> <span class="token operator">*</span>timer<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-  <span class="token keyword keyword-int">int</span> err<span class="token punctuation">;</span>
-  <span class="token comment">/* Enable interrupts */</span>
-  err <span class="token operator">=</span> <span class="token function">request_irq</span><span class="token punctuation">(</span>timer<span class="token operator">-&gt;</span>irq<span class="token punctuation">,</span>
-        sunwave_ptp_timer_isr<span class="token punctuation">,</span>
-        <span class="token number">0</span><span class="token punctuation">,</span>
-        DRIVER_NAME<span class="token punctuation">,</span>
-        timer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword keyword-return">return</span> err<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">dev_info</span><span class="token punctuation">(</span>timer<span class="token operator">-&gt;</span>dev<span class="token punctuation">,</span> <span class="token string">&quot;Acquired ptp_irq: 0x%x\n&quot;</span><span class="token punctuation">,</span> timer<span class="token operator">-&gt;</span>irq<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><p>&#x4E3A;eth_oran&#x7F51;&#x5361;&#x521B;&#x5EFA;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;link&#x72B6;&#x6001;&#x53D1;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x4FE1;&#x53F7;&#x3002;</p>
-<h2 class="mume-header" id="%E7%BC%96%E5%86%99eus_oran%E4%BD%9C%E4%B8%BAmaster%E6%BA%90%E7%9A%84%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8">&#x7F16;&#x5199;EUS_ORAN&#x4F5C;&#x4E3A;master&#x6E90;&#x7684;&#x8BBE;&#x5907;&#x9A71;&#x52A8;</h2>
-
-<p>&#x6E90;&#x7801;&#x7565;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;eus_oran&#x8BBE;&#x5907;&#x9A71;&#x52A8;</p>
-<h2 class="mume-header" id="%E9%92%88%E5%AF%B9fpga%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91n850%E6%97%B6%E9%92%9F%E8%8A%AF%E7%89%87%E7%9A%84%E6%8E%A7%E5%88%B6%E9%A9%B1%E5%8A%A8">&#x9488;&#x5BF9;FPGA&#x8FDB;&#x884C;&#x5F00;&#x53D1;N850&#x65F6;&#x949F;&#x82AF;&#x7247;&#x7684;&#x63A7;&#x5236;&#x9A71;&#x52A8;</h2>
-
-<p>&#x7565;&#xFF0C;&#x8BE6;&#x60C5;&#x89C1;ORAN&#x63A7;&#x5236;850&#x9A71;&#x52A8;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-4">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>eus_fhm&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4F7F;&#x7528;axi_dma&#x5BF9;FPGA&#x7F51;&#x53E3;&#x6570;&#x636E;&#x7684;&#x642C;&#x8FD0;&#xFF0C;&#x4E5F;&#x53EF;&#x5BF9;&#x7F51;&#x5361;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x76D1;&#x6D4B;&#xFF0C;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;master&#x6E90;&#x8FDB;&#x884C;&#x4F7F;&#x7528;&#xFF0C;N850&#x9A71;&#x52A8;&#x5DF2;&#x540C;&#x6B65;&#x5230;ORAN&#x5404;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#x3002;&#x76EE;&#x524D;&#x5747;&#x5DF2;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x3002;</p>
-<h1 class="mume-header" id="12-%E8%BD%AF%E4%BB%B6%E5%9C%A8%E7%BA%BF%E5%8D%87%E7%BA%A7%E5%BA%95%E5%B1%82%E4%B8%8D%E7%94%9F%E6%95%88%E9%97%AE%E9%A2%98%E4%BA%8C%E6%AC%A1%E5%8D%87%E7%BA%A7">12. &#x8F6F;&#x4EF6;&#x5728;&#x7EBF;&#x5347;&#x7EA7;&#x5E95;&#x5C42;&#x4E0D;&#x751F;&#x6548;&#x95EE;&#x9898;(&#x4E8C;&#x6B21;&#x5347;&#x7EA7;)</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-5">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p>ORAN&#x8BBE;&#x5907;web&#x7AEF;&#x5347;&#x7EA7;&#x5E95;&#x5C42;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5F80;&#x5F80;&#x4F1A;&#x51FA;&#x73B0;update.sh&#x811A;&#x672C;&#x4F3C;&#x4E4E;&#x672A;&#x6267;&#x884C;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5347;&#x7EA7;&#x903B;&#x8F91;&#x672A;&#x751F;&#x6548;&#xFF0C;&#x5347;&#x7EA7;&#x5931;&#x8D25;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x5907;&#x91CD;&#x542F;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x3002;</p>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-3">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
-
-<p>&#x7531;&#x4E8E;&#x8BBE;&#x5907;&#x5728;web&#x7AEF;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#x65F6;&#xFF0C;web&#x4E2D;&#x7684;cgi&#x8C03;&#x7528;&#x4E86;&#x592A;&#x591A;&#x4E86;busybox&#x7A0B;&#x5E8F;&#xFF0C;(&#x5F80;&#x5F80;&#x662F;&#x4EE5;system&#x8FDB;&#x884C;fork&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x3001;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3001;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x7B49;&#x8D44;&#x6E90;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x989D;&#x5916;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x5F00;&#x9500;)&#xFF0C;&#x5BFC;&#x81F4;busybox&#x4E2D;&#x5D4C;&#x5957;&#x7684;&#x51FD;&#x6570;&#x88AB;&#x5927;&#x91CF;&#x8C03;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x8D1F;&#x8F7D;&#x8FC7;&#x9AD8;&#xFF0C;&#x51FA;&#x73B0;&#x6027;&#x80FD;&#x74F6;&#x9888;&#xFF0C;&#x4F7F;&#x5F97;&#x540E;&#x9762;&#x8C03;&#x7528;system&#x4F1A;&#x51FA;&#x73B0;&#x65E0;&#x8D44;&#x6E90;&#x53EF;&#x5206;&#x914D;&#xFF0C;&#x8868;&#x9762;&#x4E0A;&#x770B;&#x662F;&#x811A;&#x672C;&#x672A;&#x751F;&#x6548;&#x3002;</p>
-<h2 class="mume-header" id="%E5%88%86%E6%9E%90%E9%AA%8C%E8%AF%81">&#x5206;&#x6790;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x5728;update.sh&#x811A;&#x672C;&#x4E2D;&#x52A0;&#x5165;echo&#x7B49;&#x7B80;&#x5355;&#x547D;&#x4EE4;&#xFF0C;&#x4E0D;&#x592A;&#x6D88;&#x8017;CPU&#x8D44;&#x6E90;&#xFF0C;&#x7ED3;&#x679C;&#x663E;&#x793A;&#xFF0C;&#x8BE5;&#x811A;&#x672C;&#x662F;&#x5DF2;&#x7ECF;&#x88AB;&#x6267;&#x884C;&#x4E86;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x70E7;&#x5199;flash&#x7684;&#x547D;&#x4EE4;&#x65E0;&#x6548;&#x5316;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x5C06;web&#x5347;&#x7EA7;&#x5305;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x5305;&#x820D;&#x5F03;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x5E95;&#x5C42;&#x5347;&#x7EA7;&#x5305;&#xFF0C;&#x7ED3;&#x679C;&#x663E;&#x793A;&#xFF0C;&#x662F;&#x80FD;&#x6B63;&#x5E38;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#x5E95;&#x5C42;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x90E8;&#x5206;&#x4FA7;&#x9762;&#x9A8C;&#x8BC1;&#x539F;&#x56E0;&#x731C;&#x6D4B;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F">&#x89E3;&#x51B3;&#x65B9;&#x5F0F;</h2>
+<h2 class="mume-header" id="%E7%94%9F%E6%88%90imageub%E6%96%87%E4%BB%B6">&#x751F;&#x6210;image.ub&#x6587;&#x4EF6;</h2>
 
 <ul>
-<li>&#x5C3D;&#x91CF;&#x51CF;&#x5C11;system&#x547D;&#x4EE4;&#x5BF9;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x7684;&#x6D6A;&#x8D39;&#xFF0C;&#x591A;&#x4F7F;&#x7528;fork/exev&#x7B49;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x51CF;&#x5C11;&#x7CFB;&#x7EDF;&#x6D88;&#x8017;</li>
-<li>&#x91C7;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x7B49;&#x6280;&#x672F;&#x6765;&#x63A7;&#x5236;&#x5E76;&#x53D1;&#x6570;&#xFF0C;&#x907F;&#x514D;&#x540C;&#x65F6;&#x6267;&#x884C;&#x5927;&#x91CF;&#x7684; busybox &#x547D;&#x4EE4;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x8FDB;&#x7A0B;&#x8C03;&#x5EA6;&#x548C;&#x5185;&#x5B58;&#x5F00;&#x9500;&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x66F4;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x5DE5;&#x5177;&#x66FF;&#x4EE3; busybox &#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; toybox &#x7B49;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x7CFB;&#x7EDF;&#x7684;&#x8D44;&#x6E90;&#x5F00;&#x9500;<br>
-&#x9488;&#x5BF9;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x5347;&#x7EA7;&#x95EE;&#x9898;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x8FD9;&#x8FB9;&#x5355;&#x5C5E;&#x5E95;&#x5C42;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x521B;&#x5EFA;&#x73B0;&#x6210;&#x8BDD;&#x547D;&#x4EE4;&#x6765;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x6545;&#x6211;&#x8FD9;&#x8FB9;&#x4E3A;&#x5347;&#x7EA7;flash&#x7F16;&#x4E86;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</li>
+<li>&#x901A;&#x8FC7;mkimage&#x547D;&#x4EE4;&#x5C06;Image.gz/rootfs.cpio.gz/system.dtb&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x94FE;&#x63A5;&#x751F;&#x6210;image.ub&#xFF08;xilinx&#x540C;&#x6B3E;&#x94FE;&#x63A5;&#x65B9;&#x5F0F;&#xFF09;</li>
+<li>&#x8BE5;&#x79CD;&#x7F16;&#x8BD1;&#x5185;&#x6838;&#x65B9;&#x5F0F;&#x662F;linux&#x5B98;&#x65B9;&#x7ED9;&#x7684;&#x4E00;&#x79CD;&#x53C2;&#x8003;&#xFF0C;&#x6545;&#x4E0E;xilinx&#x65E0;&#x5173;&#xFF0C;&#x6682;&#x4E0D;&#x4FEE;&#x6539;</li>
 </ul>
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
-<span class="token punctuation">{</span>
-	<span class="token keyword keyword-int">int</span> file_len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-char">char</span> <span class="token operator">*</span>str1<span class="token punctuation">;</span>
+<h1 class="mume-header" id="4-%E4%B8%AA%E4%BA%BA%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C">4. &#x4E2A;&#x4EBA;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</h1>
 
-	file_len <span class="token operator">=</span> <span class="token function">strtol</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>str1<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">nand_erase</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>file_len<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;mtd:erase ok!\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">nand_write</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;mtd:write ok!\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<ol>
+<li>&#x5185;&#x6838;&#x53EF;&#x4EE5;&#x7A33;&#x5B9A;&#x542F;&#x52A8;&#xFF0C;&#x5185;&#x6838;&#x76F8;&#x5173;&#x542F;&#x52A8;&#x65E5;&#x5FD7;&#x53CA;&#x9A71;&#x52A8;&#x6253;&#x5370;&#x548C;petalinux&#x73AF;&#x5883;&#x751F;&#x6210;&#x7684;&#x4E00;&#x6A21;&#x4E00;&#x6837;</li>
+<li>&#x7F51;&#x5361;&#x3001;&#x4E32;&#x53E3;&#x3001;N850&#x9A71;&#x52A8;&#x3001;GPIO&#x9A71;&#x52A8;&#x3001;&#x786C;&#x6838;&#x9A71;&#x52A8;&#x3001;UBI&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6302;&#x8F7D;&#x6B63;&#x5E38;&#x3001;FPGA&#x52A0;&#x8F7D;OK&#x3001;WEB&#x7AEF;&#x663E;&#x793A;&#x6B63;&#x5E38;&#xFF08;&#x67E5;&#x8BE2;&#x3001;&#x64CD;&#x4F5C;&#x7B49;&#xFF09;&#x3001;ARM&#x8FD0;&#x884C;&#x672A;&#x89C1;&#x5F02;&#x5E38;&#x3002;</li>
+<li>&#x5E95;&#x5C42;&#x81EA;&#x6D4B;&#x8868;&#x683C;&#x6D4B;&#x8BD5;OK&#xFF0C;&#x672A;&#x6DF1;&#x5165;&#x6D4B;&#x8BD5;&#x3002;</li>
+<li>&#x5185;&#x6838;&#x7F16;&#x8BD1;&#x82B1;&#x8D39;3&#x5206;&#x949F;&#xFF0C;&#x4E14;&#x4F7F;&#x7528;&#x51E0;&#x6838;&#x7F16;&#x8BD1;&#x5747;&#x53EF;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x3002;</li>
+<li>&#x5185;&#x6838;&#x5360;&#x7528;&#x5185;&#x5B58;1.5G,&#x538B;&#x7F29;&#x5305;800MB&#x3002;&#x8FDB;&#x884C;&#x5907;&#x4EFD;&#xFF0C;&#x53EF;&#x505A;&#x5230;&#x5982;ARM&#x4EE3;&#x7801;&#x538B;&#x7F29;&#x5907;&#x4EFD;&#x3002;&#x4E0D;&#x4F9D;&#x8D56;&#x6743;&#x9650;&#x95EE;&#x9898;,&#x6307;&#x5B9A;&#x7F16;&#x8BD1;&#x5668;&#x5373;&#x53EF;&#x7F16;&#x8BD1;&#x3002;</li>
+</ol>
+<h1 class="mume-header" id="5-%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0">5. &#x98CE;&#x9669;&#x8BC4;&#x4F30;</h1>
 
-	<span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><p>&#x5176;&#x4E2D;nand_erase&#x548C;nand_write&#x5747;&#x4F7F;&#x7528;ioctl&#x6309;&#x7167;mtd device&#x7684;&#x65B9;&#x5F0F;&#x5BF9;flash&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4E2D;&#x53EF;&#x6309;&#x9700;&#x6C42;&#x589E;&#x52A0;ecc&#x6821;&#x9A8C;&#x903B;&#x8F91;&#x3002;</p>
-<h2 class="mume-header" id="%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-4">&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;</h2>
+<ol>
+<li>&#x7A33;&#x5B9A;&#x6027;&#x98CE;&#x9669;&#xFF0C;&#x8BBE;&#x5907;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x957F;&#x65F6;&#x95F4;&#x7A33;&#x5B9A;&#x6027;&#x6D4B;&#x8BD5;&#xFF0C;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x7A33;&#x5B9A;&#x6027;&#x3002;</li>
+<li>&#x5728;&#x7EBF;&#x5347;&#x7EA7;&#x3001;&#x7F51;&#x5361;&#x9A71;&#x52A8;&#x7B49;&#x4E00;&#x4E9B;&#x5217;&#xFF0C;&#x5747;&#x53EA;&#x505A;&#x8FC7;&#x4E00;&#x6B21;&#x6027;&#x6D4B;&#x8BD5;&#xFF0C;&#x672A;&#x505A;&#x538B;&#x529B;&#x6D4B;&#x8BD5;&#xFF0C;&#x6545;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x529F;&#x80FD;&#x5B8C;&#x6574;&#x6027;&#x3002;</li>
+<li>&#x8BBE;&#x5907;&#x6027;&#x80FD;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x98CE;&#x9669;&#xFF0C;&#x672A;&#x505A;&#x4EFB;&#x4F55;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#xFF0C;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x6027;&#x80FD;&#x3002;</li>
+</ol>
+<h1 class="mume-header" id="6-%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%84%E4%BC%B0">6. &#x5DE5;&#x4F5C;&#x91CF;&#x8BC4;&#x4F30;</h1>
 
-<p>ORAN&#x4F7F;&#x7528;&#x8BE5;&#x7A0B;&#x5E8F;&#x653E;&#x7F6E;update.sh&#x811A;&#x672C;&#x4E2D;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#xFF0C;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x9884;&#x671F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E8C;&#x6B21;&#x91CD;&#x542F;&#xFF0C;&#x5927;&#x5927;&#x51CF;&#x5C11;&#x5347;&#x7EA7;&#x65F6;&#x95F4;&#xFF0C;&#x7F29;&#x5C0F;&#x5347;&#x7EA7;&#x98CE;&#x9669;&#x3002;</p>
-<h1 class="mume-header" id="13-zynq%E7%B3%BB%E5%88%97%E8%AE%BE%E5%A4%87%E5%9C%A8uboot%E4%B8%AD%E6%94%AF%E6%8C%81tftp%E5%8A%9F%E8%83%BD">13. ZYNQ&#x7CFB;&#x5217;&#x8BBE;&#x5907;&#x5728;UBOOT&#x4E2D;&#x652F;&#x6301;tftp&#x529F;&#x80FD;</h1>
-
-<h2 class="mume-header" id="%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</h2>
+<h2 class="mume-header" id="%E5%88%9D%E6%AC%A1%E7%BC%96%E8%AF%91">&#x521D;&#x6B21;&#x7F16;&#x8BD1;</h2>
 
 <ul>
-<li>&#x5916;&#x7F51;&#x8BBE;&#x5907;&#xFF0C;&#x7531;&#x4E8E;uboot&#x662F;&#x6709;&#x5907;&#x4EFD;&#x7684;&#xFF0C;&#x4F46;&#x662F;kernel&#x6CA1;&#x6709;&#xFF0C;&#x4E00;&#x65E6;kernel&#x56E0;&#x4E3A;&#x67D0;&#x79CD;&#x539F;&#x56E0;&#x6302;&#x6389;&#xFF0C;&#x53EF;&#x7528;&#x7F51;&#x53E3;&#x8FDB;&#x884C;tftp&#x5347;&#x7EA7;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;sd&#x5361;&#x7B49;&#x652F;&#x6301;</li>
-<li>&#x5982;&#x679C;&#x8BBE;&#x5907;&#x5E95;&#x5C42;&#x8FDB;&#x884C;&#x91CD;&#x5927;&#x4FEE;&#x6539;(uboot&#x548C;kernel&#x5747;&#x6709;&#x4FEE;&#x6539;&#xFF0C;&#x800C;web&#x7AEF;&#x5347;&#x7EA7;&#x56E0;&#x4E3A;&#x5206;&#x533A;&#x4FEE;&#x6539;&#x3001;&#x98CE;&#x9669;&#x7B49;&#x5F71;&#x54CD;&#x56E0;&#x7D20;)&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7F51;&#x53E3;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#x9700;&#x6C42;&#x3002;</li>
+<li>&#x6839;&#x636E;xilinx SDK&#x6E90;&#x7801;&#x79FB;&#x690D;xilinx&#x76F8;&#x5173;&#x9A71;&#x52A8;&#x53CA;&#x63A7;&#x5236;&#x5668;&#x3001;&#x5E73;&#x53F0;&#x4FE1;&#x606F;&#x7B49;</li>
+<li>&#x914D;&#x7F6E;&#x5185;&#x6838;&#x7684;config&#x6587;&#x4EF6;</li>
+<li>&#x6839;&#x636E;xsa&#xFF0C;&#x4F7F;&#x7528;petalinux&#x751F;&#x6210;&#x8BBE;&#x5907;&#x6811;&#xFF08;&#x76EE;&#x524D;&#x672A;&#x7814;&#x7A76;&#x8BBE;&#x5907;&#x6811;&#x8BE5;&#x5982;&#x4F55;&#x751F;&#x6210;&#xFF09;</li>
+<li>&#x79FB;&#x690D;&#x8BBE;&#x5907;&#x6811;&#x5230;&#x5185;&#x6838;&#xFF0C;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</li>
+<li>&#x6309;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x786E;&#x5B9A;busybox&#x7684;&#x547D;&#x4EE4;&#x5E93;&#x53CA;&#x542F;&#x52A8;&#x987A;&#x5E8F;</li>
 </ul>
-<h2 class="mume-header" id="%E8%AE%BE%E8%AE%A1%E6%8F%8F%E8%BF%B0">&#x8BBE;&#x8BA1;&#x63CF;&#x8FF0;</h2>
+<h2 class="mume-header" id="%E4%BA%8C%E6%AC%A1%E7%BC%96%E8%AF%91%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0">&#x4E8C;&#x6B21;&#x7F16;&#x8BD1;/&#x5176;&#x4ED6;&#x5E73;&#x53F0;</h2>
 
 <ul>
-<li>&#x5728;uboot&#x4E2D;&#x652F;&#x6301;tftp&#x547D;&#x4EE4;</li>
-<li>&#x6839;&#x636E;phy&#x82AF;&#x7247;&#x7C7B;&#x578B;&#x589E;&#x52A0;phy init&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;</li>
-<li>&#x94FE;&#x63A5;&#x8FDB;uboot&#x4E2D;&#x7684;&#x8BBE;&#x5907;&#x6811;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x7F51;&#x5361;</li>
-<li>&#x6839;&#x636E;&#x5B9E;&#x9645;&#x9700;&#x6C42;&#x5BF9;tftp&#x76F8;&#x5173;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x6027;&#x903B;&#x8F91;&#x7F16;&#x5199;</li>
+<li>&#x5185;&#x6838;&#x6E90;&#x7801;&#x76F4;&#x63A5;&#x89E3;&#x538B;&#x7F29;&#x590D;&#x7528;</li>
+<li>&#x82E5;&#x662F;&#x5176;&#x4ED6;&#x5E73;&#x53F0;&#xFF0C;&#x751F;&#x6210;&#x8BBE;&#x5907;&#x6811;&#x540E;&#x66FF;&#x6362;&#x8BBE;&#x5907;&#x6811;&#x5373;&#x53EF;</li>
+<li>&#x6309;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x8FDB;&#x884C;&#x5904;&#x7406;</li>
 </ul>
-<h2 class="mume-header" id="%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%96%BD">&#x8BBE;&#x8BA1;&#x5B9E;&#x65BD;</h2>
+<h1 class="mume-header" id="7-%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%93">7. &#x8BBE;&#x8BA1;&#x603B;&#x7ED3;</h1>
 
-<p>&#x6D89;&#x53CA;&#x5E95;&#x5C42;&#x4EE3;&#x7801;&#x8FC7;&#x591A;&#xFF0C;&#x7565;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x67E5;&#x770B;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-5">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x53EF;&#x5728;uboot&#x4E2D;&#x8FDB;&#x884C;tftp&#x5347;&#x7EA7;&#x3002;&#x79C1;&#x4E0B;&#x5199;&#x8FC7;&#x81EA;&#x52A8;&#x70E7;&#x5199;&#x7248;&#x672C;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x4E0D;&#x5F00;&#x76D6;&#x8FDB;&#x884C;tftp&#x5347;&#x7EA7;&#x7684;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x63A5;&#x4E32;&#x53E3;&#x3001;sd&#x7B49;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x672C;&#x5730;&#x7F51;&#x5361;ip(&#x672A;&#x540C;&#x6B65;&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x65E0;&#x6B64;&#x9700;&#x6C42;)</p>
-<h1 class="mume-header" id="14-e3%E7%AD%89am35x%E8%AE%BE%E5%A4%87%E5%87%BA%E7%8E%B0arm%E6%B2%A1%E6%9C%89%E6%89%93%E5%8D%B0%E9%97%AE%E9%A2%98">14. E3&#x7B49;AM35x&#x8BBE;&#x5907;&#x51FA;&#x73B0;ARM&#x6CA1;&#x6709;&#x6253;&#x5370;&#x95EE;&#x9898;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90">&#x73B0;&#x72B6;&#x5206;&#x6790;</h2>
-
-<p>HPRU/E3/KDDI_RU&#x8BBE;&#x5907;&#x5728;&#x7CFB;&#x7EDF;&#x8D77;&#x6765;&#x540E;&#xFF0C;ARM&#x5747;&#x65E0;&#x6253;&#x5370;&#xFF0C;&#x6240;&#x4F7F;&#x7528;&#x7684;debug_msg&#x65E0;&#x6548;&#x5316;</p>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-4">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
-
-<p>&#x4E8E;Ti am335x&#x5E73;&#x53F0;&#x800C;&#x8A00;&#xFF0C;&#x5176;&#x914D;&#x7F6E;&#x7528;&#x6237;&#x6001;tty&#x662F;&#x7531;busybox&#x4E2D;&#x7684;getty&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x7ECF;&#x67E5;&#xFF0C;&#x8BE5;&#x5E73;&#x53F0;&#x5185;&#x6838;&#x914D;&#x7F6E;&#x5C06;busybox&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x653E;&#x5728;&#x6BD4;&#x8F83;&#x9760;&#x540E;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#xFF08;login&#x524D;&#x9762;&#xFF09;&#xFF0C;arm&#x8D77;&#x5F97;&#x6BD4;&#x8F83;&#x65E9;&#xFF0C;&#x7531;linuxrc&#x8D77;&#x6765;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x811A;&#x672C;&#x76F4;&#x63A5;&#x62C9;&#x8D77;&#x6765;&#xFF0C;&#x5BFC;&#x81F4;&#x6253;&#x5370;&#x73AF;&#x5883;&#x672A;&#x914D;&#x7F6E;&#x597D;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-4">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token comment">// &#x6253;&#x5F00;&#x4E32;&#x53E3;&#x8BBE;&#x5907;</span>
-    <span class="token keyword keyword-int">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;/dev/ttyS0&quot;</span><span class="token punctuation">,</span> O_RDWR <span class="token operator">|</span> O_NOCTTY<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>fd <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;open&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-return">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment">// &#x914D;&#x7F6E;&#x4E32;&#x53E3;&#x53C2;&#x6570;</span>
-    <span class="token keyword keyword-struct">struct</span> <span class="token class-name">termios</span> options<span class="token punctuation">;</span>
-    <span class="token function">tcgetattr</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    options<span class="token punctuation">.</span>c_cflag <span class="token operator">=</span> B9600 <span class="token operator">|</span> CS8 <span class="token operator">|</span> CLOCAL <span class="token operator">|</span> CREAD<span class="token punctuation">;</span>
-    options<span class="token punctuation">.</span>c_iflag <span class="token operator">=</span> IGNPAR<span class="token punctuation">;</span>
-    options<span class="token punctuation">.</span>c_oflag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    options<span class="token punctuation">.</span>c_lflag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token function">tcsetattr</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> TCSANOW<span class="token punctuation">,</span> <span class="token operator">&amp;</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">// &#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x548C;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x5230;&#x4E32;&#x53E3;</span>
-    <span class="token function">dup2</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> STDIN_FILENO<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">dup2</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> STDOUT_FILENO<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">dup2</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> STDERR_FILENO<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">// &#x4F7F;&#x7528;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x901A;&#x4FE1;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Hello, serial port!\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-char">char</span> buf<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%s&quot;</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;You typed: %s\n&quot;</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">// &#x5173;&#x95ED;&#x4E32;&#x53E3;&#x8BBE;&#x5907;</span>
-    <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</pre><p>ARM&#x6E90;&#x7801;&#x4E2D;&#x589E;&#x52A0;&#x4E32;&#x53E3;&#x91CD;&#x5B9A;&#x5411;&#x4EE3;&#x7801;(&#x53C2;&#x8003;&#x4EE5;&#x4E0A;&#x672C;&#x4EBA;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;)&#x5373;&#x53EF;&#x5B9E;&#x73B0;ARM&#x7A0B;&#x5E8F;&#x6253;&#x5370;&#x9700;&#x6C42;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-6">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x901A;&#x8FC7;E3/RU&#x8BBE;&#x5907;&#x6D4B;&#x8BD5;&#xFF0C;ARM&#x7A0B;&#x5E8F;&#x6253;&#x5370;ok&#xFF0C;&#x7B26;&#x5408;&#x9884;&#x671F;&#x8981;&#x6C42;&#xFF0C;&#x9700;&#x6C42;&#x4E88;&#x4EE5;&#x89E3;&#x51B3;&#x3002;</p>
-<h1 class="mume-header" id="15-e3%E7%AD%89am335x%E8%AE%BE%E5%A4%87%E5%85%89%E5%8F%A3%E4%B8%8D%E9%80%9A%E9%97%AE%E9%A2%98">15. E3&#x7B49;AM335x&#x8BBE;&#x5907;&#x5149;&#x53E3;&#x4E0D;&#x901A;&#x95EE;&#x9898;</h1>
-
-<h2 class="mume-header" id="%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0-6">&#x73B0;&#x8C61;&#x63CF;&#x8FF0;</h2>
-
-<p>E3&#x8BBE;&#x5907;&#x542F;&#x52A8;&#x65F6;&#xFF0C;cpri&#x7F51;&#x53E3;&#x4E00;&#x76F4;&#x663E;&#x793A;rx&#x65E0;&#x6570;&#x636E;&#xFF0C;ping&#x4E0D;&#x901A;&#x5176;&#x4ED6;&#x8BBE;&#x5907;</p>
-<h2 class="mume-header" id="%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90-5">&#x539F;&#x56E0;&#x5206;&#x6790;</h2>
-
-<p>FPGA&#x4F7F;&#x7528;Jtag&#x8FDB;&#x884C;&#x6293;&#x5305;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x6293;&#x5230;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x4F46;&#x662F;rx_en&#x4E00;&#x76F4;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;&#x7ECF;&#x731C;&#x6D4B;&#x53EF;&#x80FD;&#x662F;RMII2_CRS_DV&#x6CA1;&#x6709;&#x62C9;&#x9AD8;&#x5BFC;&#x81F4;&#x7684;&#x3002;&#x67E5;&#x770B;&#x539F;&#x7406;&#x56FE;&#xFF0C;TS5A3157DBVR&#x901A;&#x8FC7;&#x4FE1;&#x53F7;&#x5207;&#x6362;&#xFF0C;&#x8FDB;&#x884C;<br>
-&#x8F93;&#x5165;RMII2_CRS_DV&#xFF0C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;FPGA rx_en&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3002;&#x901A;&#x8FC7;&#x793A;&#x6CE2;&#x5668;&#x8FDB;&#x884C;&#x6D4B;&#x91CF;&#xFF0C;wait_ctrl&#x811A;&#x5728;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#x6709;&#x77ED;&#x6682;&#x62C9;&#x9AD8;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<h2 class="mume-header" id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-5">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h2>
-
-<p>&#x5728;&#x5185;&#x6838;&#x542F;&#x52A8;&#x4E4B;&#x521D;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5C06;wait_ctrl&#x5F15;&#x811A;&#x63A5;&#x7BA1;&#xFF0C;&#x62C9;&#x4F4E;&#x4E4B;&#x540E;&#x518D;&#x8D77;FPGA&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;TS5A3157DBVR&#x5207;&#x6362;&#x5230;&#x8F93;&#x5165;RMII2_CRS_DV&#x811A;&#xFF0C;&#x4FDD;&#x8BC1;rx_en&#x7684;&#x7A33;&#x5B9A;&#x3002;</p>
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-void">void</span> <span class="token function">sunwave_wait_gpio_init</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-	<span class="token function">printk</span><span class="token punctuation">(</span><span class="token string">&quot;init gpio2_27\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">gpio_request</span><span class="token punctuation">(</span> <span class="token number">91</span><span class="token punctuation">,</span> <span class="token constant">NULL</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token function">gpio_direction_output</span><span class="token punctuation">(</span> <span class="token number">91</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//	printk(&quot;init gpio1_23\n&quot;);</span>
-<span class="token comment">//	gpio_request( 55, NULL );</span>
-<span class="token comment">//	gpio_direction_output( 55, 0 );</span>
-<span class="token punctuation">}</span>
-</pre><p>&#x5177;&#x4F53;wait_ctrl&#x5F15;&#x811A;&#x53F7;&#x591A;&#x5C11;&#x7531;&#x786C;&#x4EF6;&#x6392;&#x7248;&#x51B3;&#x5B9A;&#xFF0C;&#x5E95;&#x5C42;&#x8FD9;&#x8FB9;&#x53EA;&#x6709;&#x5EFA;&#x8BAE;&#x3002;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-7">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>&#x7ECF;&#x8FC7;E3&#x8BBE;&#x5907;&#x6D4B;&#x8BD5;&#xFF0C;cpri&#x53E3;&#x53EF;&#x4EE5;ping&#x901A;AU&#x8BBE;&#x5907;&#xFF0C;wait_ctrl&#x811A;&#x7535;&#x5E73;&#x4E5F;&#x672A;&#x51FA;&#x73B0;&#x8DF3;&#x53D8;&#x73B0;&#x8C61;&#x3002;</p>
-<h1 class="mume-header" id="16-%E4%BF%AE%E6%94%B9%E5%B9%B6%E5%90%8C%E6%AD%A5%E4%B8%8A%E5%B1%82ecpri%E5%92%8Ccpri%E7%BD%91%E5%8F%A3%E5%90%8D%E7%A7%B0">16. &#x4FEE;&#x6539;&#x5E76;&#x540C;&#x6B65;&#x4E0A;&#x5C42;ecpri&#x548C;cpri&#x7F51;&#x53E3;&#x540D;&#x79F0;</h1>
-
-<h2 class="mume-header" id="%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0-1">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</h2>
-
-<ul>
-<li>&#x7531;&#x4E8E;&#x4E0A;&#x5C42;&#x4EE3;&#x7801;&#x7F3A;&#x5C11;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x5C06;eth0&#x5F53;&#x505A;cpri&#x7F51;&#x53E3;&#xFF0C;&#x76F4;&#x63A5;&#x662F;&#x5199;&#x6B7B;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5E95;&#x5C42;&#x8FD9;&#x8FB9;&#x8FDB;&#x884C;&#x7279;&#x5B9A;&#x7F51;&#x53E3;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x540D;&#x79F0;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E0A;&#x5C42;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x590D;&#x7528;&#x6027;</li>
-<li>ORAN&#x8FD9;&#x8FB9;&#x5BF9;ecpri&#x7F51;&#x5361;&#x9700;&#x8981;&#x505A;&#x5B9A;&#x5236;&#x5904;&#x7406;&#xFF0C;&#x540D;&#x79F0;&#x4E3A;eth-oran</li>
-</ul>
-<h2 class="mume-header" id="%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">&#x5B9E;&#x73B0;&#x539F;&#x7406;</h2>
-
-<ul>
-<li>&#x5185;&#x6838;&#x6CE8;&#x518C;&#x7F51;&#x5361;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x6309;&#x7167;id&#x53F7;&#x8FDB;&#x884C;&#x5206;&#x914D;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;</li>
-<li>&#x6CE8;&#x518C;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x662F;&#x6309;&#x7167;&#x8BBE;&#x5907;&#x6811;&#x4E2D;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x7684;&#x6392;&#x5217;&#x987A;&#x5E8F;&#x6765;&#x7684;&#xFF0C;&#x6392;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x5373;&#x4E3A;eth0,&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;</li>
-<li>&#x5185;&#x6838;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BC6;&#x522B;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#xFF0C;&#x5728;&#x6CE8;&#x518C;&#x8BBE;&#x5907;&#x65F6;&#x8FDB;&#x884C;&#x91CD;&#x547D;&#x540D;&#xFF0C;&#x5F3A;&#x884C;&#x4FEE;&#x6539;&#x7F51;&#x5361;&#x540D;&#x79F0;</li>
-</ul>
-<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0-1">&#x6E90;&#x7801;&#x5B9E;&#x73B0;</h2>
-
-<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword keyword-int">int</span> <span class="token function">register_netdevice</span><span class="token punctuation">(</span><span class="token keyword keyword-struct">struct</span> <span class="token class-name">net_device</span> <span class="token operator">*</span>dev<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-	<span class="token keyword keyword-int">int</span> ret<span class="token punctuation">;</span>
-	<span class="token keyword keyword-struct">struct</span> <span class="token class-name">net</span> <span class="token operator">*</span>net <span class="token operator">=</span> <span class="token function">dev_net</span><span class="token punctuation">(</span>dev<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-
-	ret <span class="token operator">=</span> <span class="token function">dev_get_valid_name</span><span class="token punctuation">(</span>net<span class="token punctuation">,</span> dev<span class="token punctuation">,</span> dev<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ret <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
-		<span class="token keyword keyword-goto">goto</span> out<span class="token punctuation">;</span>
-
-	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> <span class="token function">strncmp</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>name<span class="token punctuation">,</span><span class="token string">&quot;eth3&quot;</span><span class="token punctuation">,</span><span class="token keyword keyword-sizeof">sizeof</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-	<span class="token punctuation">{</span>
-		<span class="token function">strlcpy</span><span class="token punctuation">(</span>dev<span class="token operator">-&gt;</span>name<span class="token punctuation">,</span> <span class="token string">&quot;eth-oran&quot;</span><span class="token punctuation">,</span> IFNAMSIZ<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-</pre><p>&#x6709;&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x5361;&#x540D;&#x79F0;&#x548C;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7F51;&#x5361;&#x540D;&#x79F0;&#x3002;&#x7531;&#x4E8E;&#x9886;&#x5BFC;&#x672A;&#x505A;&#x8981;&#x6C42;&#xFF0C;&#x6545;&#x9009;&#x62E9;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x540D;&#x79F0;&#x5373;&#x53EF;&#x3002;</p>
-<h1 class="mume-header" id="17-m2ru%E8%AE%BE%E5%A4%87das%E5%92%8Coran%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E5%BA%95%E5%B1%82%E8%AE%BE%E8%AE%A1">17. M2RU&#x8BBE;&#x5907;DAS&#x548C;ORAN&#x5E73;&#x53F0;&#x7EDF;&#x4E00;&#x5E95;&#x5C42;&#x8BBE;&#x8BA1;</h1>
-
-<h2 class="mume-header" id="%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0-2">&#x9700;&#x6C42;&#x63CF;&#x8FF0;</h2>
-
-<ul>
-<li>&#x76EE;&#x524D;&#x4EA7;&#x7EBF;&#x751F;&#x4EA7;&#x6D41;&#x7A0B;&#x4E2D;&#xFF0C;ORAN&#x8BBE;&#x5907;&#x9700;&#x8981;&#x5728;DAS&#x8BBE;&#x5907;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x70E7;&#x5199;&#x5E95;&#x5C42;&#xFF0C;&#x624D;&#x80FD;&#x8F6C;&#x6362;&#x6210;ORAN&#x8BBE;&#x5907;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4EA7;&#x7EBF;&#x8D1F;&#x62C5;</li>
-<li>M2RU&#x8BBE;&#x5907;&#x9700;&#x8981;&#x505A;boot&#x56DB;&#x5907;&#x4EFD;&#x7CFB;&#x7EDF;&#xFF0C;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x5BB9;&#x9519;&#x7387;</li>
-<li>ORAN&#x8BBE;&#x5907;&#x9700;&#x8981;&#x652F;&#x6301;&#x5373;&#x4F7F;&#x5206;&#x533A;&#x53D8;&#x5316;&#xFF0C;&#x4ECD;&#x7136;&#x80FD;&#x591F;&#x652F;&#x6301;&#x5BF9;&#x5916;&#x7F51;&#x8BBE;&#x5907;&#x5B9E;&#x73B0;web&#x5347;&#x7EA7;&#x5E95;&#x5C42;</li>
-<li>&#x7EDF;&#x4E00;&#x7248;&#x672C;&#x540E;&#xFF0C;&#x4E0D;&#x7528;&#x53EF;&#x4EE5;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x5E95;&#x5C42;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4E0B;&#x53D1;&#x4E00;&#x4E2A;&#x5373;&#x53EF;</li>
-</ul>
-<h2 class="mume-header" id="%E7%90%86%E8%AE%BA%E5%88%86%E6%9E%90">&#x7406;&#x8BBA;&#x5206;&#x6790;</h2>
-
-<ul>
-<li>&#x9488;&#x5BF9;M2RU&#x8BBE;&#x5907;DAS&#x548C;ORAN&#x8BBE;&#x5907;&#x7684;FPGA&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x80FD;&#x91C7;&#x53D6;DAS&#x548C;ORAN&#x8BBE;&#x5907;&#x6811;&#x8FDB;&#x884C;&#x5206;&#x5F00;&#x52A0;&#x8F7D;&#x7684;&#x7B56;&#x7565;</li>
-<li>&#x91C7;&#x53D6;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x5F62;&#x5F0F;&#x5BF9;DAS&#x548C;ORAN&#x8BBE;&#x5907;&#x8FDB;&#x884C;&#x8BBE;&#x5907;&#x6811;&#x8FA8;&#x6790;</li>
-<li>&#x7531;&#x4E8E;&#x589E;&#x52A0;uboot&#x5907;&#x4EFD;&#xFF0C;&#x5E95;&#x5C42;&#x5206;&#x533A;&#x5DF2;&#x6539;&#x52A8;&#xFF0C;&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x5916;&#x7F51;&#x8BBE;&#x5907;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#xFF0C;kernel&#x5206;&#x533A;&#x5730;&#x5740;&#x4E0D;&#x4E88;&#x4FEE;&#x6539;&#xFF0C;&#x652F;&#x6301;&#x6309;flash&#x504F;&#x79FB;&#x8FDB;&#x884C;&#x5347;&#x7EA7;</li>
-<li>M2RU-ORAN&#x8BBE;&#x5907;&#x7684;ecpri&#x7F51;&#x5361;&#xFF0C;&#x52A0;&#x8F7D;&#x524D;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x597D;FPGA&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x65F6;&#x949F;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x63D0;&#x524D;&#x52A0;&#x8F7D;bit&#x6587;&#x4EF6;</li>
-</ul>
-<h2 class="mume-header" id="%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0">&#x5E95;&#x5C42;&#x5B9E;&#x73B0;</h2>
-
-<ul>
-<li>&#x5728;&#x7CFB;&#x7EDF;&#x751F;&#x6210;image&#x65F6;&#xFF0C;&#x5728;image&#x5934;&#x90E8;&#x63D2;&#x5165;&#x4E24;&#x5F20;&#x8BBE;&#x5907;&#x6811;&#xFF0C;&#x4E00;&#x4EFD;&#x662F;DAS&#x7684;&#xFF0C;&#x4E00;&#x4EFD;&#x662F;ORAN&#x7684;&#xFF0C;&#x4F9B;uboot&#x8FDB;&#x884C;&#x52A0;&#x8F7D;&#x4F7F;&#x7528;</li>
-<li>uboot&#x4E2D;&#x589E;&#x52A0;&#x5728;&#x8BFB;&#x53D6;image&#x8BBE;&#x5907;&#x6811;&#x65F6;&#xFF0C;&#x91C7;&#x7528;&#x8BC6;&#x522B;&#x73AF;&#x5883;&#x53D8;&#x91CF;das_platform&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x52A0;&#x8F7D;&#x4E0D;&#x901A;&#x7684;&#x8BBE;&#x5907;&#x6811;</li>
-<li>ORAN&#x8BBE;&#x5907;&#x8FD8;&#x662F;DAS&#x8BBE;&#x5907;&#x5747;&#x53EF;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5207;&#x6362;&#xFF0C;&#x6216;web&#x7AEF;&#x5347;&#x7EA7;env&#x5206;&#x533A;&#xFF0C;&#x76EE;&#x524D;&#x9ED8;&#x8BA4;&#x662F;ORAN&#x8BBE;&#x5907;</li>
-<li>&#x82E5;&#x4E3A;ORAN&#x8BBE;&#x5907;&#xFF0C;&#x5219;&#x5728;&#x542F;&#x52A8;cpri&#x7F51;&#x5361;&#x524D;&#x52A0;&#x8F7D;bit&#x6587;&#x4EF6;&#xFF0C;&#x82E5;&#x4E0A;&#x5C42;&#x6709;bit&#x6587;&#x4EF6;&#x5373;&#x52A0;&#x8F7D;&#x4E0A;&#x5C42;bit&#x6587;&#x4EF6;&#xFF0C;&#x5426;&#x5219;&#x52A0;&#x8F7D;&#x5E95;&#x5C42;&#x9ED8;&#x8BA4;bit&#x6587;&#x4EF6;</li>
-</ul>
-<p>&#x5177;&#x4F53;&#x6E90;&#x7801;&#x5B9E;&#x73B0;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x76F8;&#x5E94;&#x7684;&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;&#xFF0C;&#x6B64;&#x5904;&#x53EA;&#x5C55;&#x793A;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#x53CA;&#x53EF;&#x884C;&#x6027;&#x5206;&#x6790;</p>
-<h2 class="mume-header" id="%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81-8">&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h2>
-
-<p>M2RU&#x5E95;&#x5C42;&#x76EE;&#x524D;&#x7ECF;&#x8FC7;&#x957F;&#x65F6;&#x95F4;&#x7A33;&#x5B9A;&#x6027;&#x6D4B;&#x8BD5;&#xFF0C;&#x5DF2;&#x57FA;&#x672C;&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#xFF0C;&#x8868;&#x660E;&#x8BE5;&#x5E95;&#x5C42;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#x662F;&#x53EF;&#x884C;&#x7684;&#x3002;</p>
-<h1 class="mume-header" id="%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD">&#x672A;&#x5B8C;&#x5F85;&#x7EED;...</h1>
-
-<p>&#x540E;&#x7EED;&#x8FD8;&#x6709;KDDI_MU&#x7684;&#x542F;&#x52A8;&#x95EE;&#x9898;&#x3001;KDDI_HU&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x5F00;&#x53D1;&#x95EE;&#x9898;&#x3001;micron(&#x9541;&#x5149;)flash&#x7684;&#x4E0D;&#x540C;&#x578B;&#x53F7;&#x7684;&#x5E95;&#x5C42;&#x652F;&#x6301;&#x95EE;&#x9898;&#x3001;flash ecc&#x6821;&#x9A8C;&#x95EE;&#x9898;...</p>
+<p>&#x6B64;&#x6B21;&#x8BBE;&#x8BA1;&#x5C5E;&#x4E8E;&#x89E3;&#x51B3;&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x53BB;&#x7E41;&#x5C31;&#x7B80;&#xFF0C;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x5360;&#x7528;&#x548C;&#x63D0;&#x9AD8;&#x53EF;&#x590D;&#x7528;&#x6027;&#xFF0C;&#x907F;&#x514D;&#x4E25;&#x91CD;&#x4F9D;&#x8D56;xilinx&#x800C;&#x505A;&#x7684;&#x6280;&#x672F;&#x7814;&#x7A76;&#x3002;&#x5355;&#x5C31;&#x8BBE;&#x5907;&#x5E95;&#x5C42;&#x800C;&#x8A00;&#xFF0C;&#x672A;&#x6709;&#x4EFB;&#x4F55;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x548C;&#x63D0;&#x9AD8;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x53EA;&#x662F;&#x7ED9;&#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x4E86;&#x53E6;&#x4E00;&#x79CD;&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#x7684;&#x601D;&#x8DEF;&#x3002;</p>
 
       </div>
       
