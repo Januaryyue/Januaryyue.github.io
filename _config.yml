@@ -103,4 +103,4 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/lizheng-sudo/January.git
+  repo: https://github.com/lizheng-sudo/January.github.io.git
