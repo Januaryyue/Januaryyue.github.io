@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"januaryyue.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="M2RU底层详细设计    &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;       版本 简介 编辑日期 作者    V0.1 初稿 2022-03-15 January          目录     [toc]  #综述  1. 概述详细设计背景 m2ru-oran底层只有一个boot备份，一旦启动坏掉，设备即刻成砖，急需提高设备容错率 目前产线生产">
+<meta property="og:type" content="article">
+<meta property="og:title" content="M2RU底层详细设计">
+<meta property="og:url" content="https://januaryyue.github.io/2022/03/15/m2ru%E5%BA%95%E5%B1%82%E5%90%AF%E5%8A%A8%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="January的博客">
+<meta property="og:description" content="M2RU底层详细设计    &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;       版本 简介 编辑日期 作者    V0.1 初稿 2022-03-15 January          目录     [toc]  #综述  1. 概述详细设计背景 m2ru-oran底层只有一个boot备份，一旦启动坏掉，设备即刻成砖，急需提高设备容错率 目前产线生产">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://januaryyue.github.io/picture/pic1.svg">
+<meta property="og:image" content="https://januaryyue.github.io/picture/pic_partition.svg">
+<meta property="og:image" content="https://januaryyue.github.io/picture/pic_compare_partition.svg">
+<meta property="article:published_time" content="2022-03-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-30T06:38:07.007Z">
+<meta property="article:author" content="January">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://januaryyue.github.io/picture/pic1.svg">
+
+<link rel="canonical" href="https://januaryyue.github.io/2022/03/15/m2ru%E5%BA%95%E5%B1%82%E5%90%AF%E5%8A%A8%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>M2RU底层详细设计 | January的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">January的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Linux</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://januaryyue.github.io/2022/03/15/m2ru%E5%BA%95%E5%B1%82%E5%90%AF%E5%8A%A8%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="January">
+      <meta itemprop="description" content="Linux编程,Python学习,Python爬虫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="January的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          M2RU底层详细设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-03-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-15T00:00:00+08:00">2022-03-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-30 14:38:07" itemprop="dateModified" datetime="2023-08-30T14:38:07+08:00">2023-08-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div align="center">
+<font size=7 > M2RU底层详细设计
+
+</font>
+</div>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<div align="center">
+
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>简介</th>
+<th>编辑日期</th>
+<th>作者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V0.1</td>
+<td>初稿</td>
+<td>2022-03-15</td>
+<td>January</td>
+</tr>
+</tbody></table>
+</div>
+
+<div STYLE="page-break-after: always;"></div>
+
+<div align="center">
+<font size=7 > 
+目录
+
+</font>
+</div>
+
+<p>[toc]</p>
+<div STYLE="page-break-after: always;"></div>
+#综述
+
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="详细设计背景"><a href="#详细设计背景" class="headerlink" title="详细设计背景"></a>详细设计背景</h2><ul>
+<li><font color="black">m2ru-oran底层只有一个boot备份，一旦启动坏掉，设备即刻成砖，急需提高设备容错率</font></li>
+<li><font color="black">目前产线生产流程中，ORAN设备需要在DAS设备基础上进行烧写底层，才能转换成ORAN设备，增加了产线负担</font></li>
+<li><font color="black">外场das设备升级成oran设备过程中，往往伴随着升级风险</font></li>
+</ul>
+<h2 id="详细设计目的"><a href="#详细设计目的" class="headerlink" title="详细设计目的"></a>详细设计目的</h2><ul>
+<li>boot启动分区增加至4个，大大减小设备启动失败的风险</li>
+<li>减少产线在线升级oran底层带来的额外操作及风险</li>
+<li>合并das&#x2F;oran底层版本，减少底层后期维护成本</li>
+</ul>
+<hr>
+<h1 id="2-模块设计"><a href="#2-模块设计" class="headerlink" title="2. 模块设计"></a>2. 模块设计</h1><h2 id="UBOOT模块设计"><a href="#UBOOT模块设计" class="headerlink" title="UBOOT模块设计"></a>UBOOT模块设计</h2><h3 id="uboot启动逻辑设计"><a href="#uboot启动逻辑设计" class="headerlink" title="uboot启动逻辑设计"></a>uboot启动逻辑设计</h3><ul>
+<li>在uboot加载内核kernel时，通过解析kernel头部信息获取内核加载地址、设备树等信息</li>
+<li>通过获取到的fit_uname_config到kernel头部轮询到设备树节点(按字符串为key值)，再将其加载到内存中</li>
+<li>uboot将设备树dtb的地址传给kernel，然后进行加载内核，控制权移交给内核即可</li>
+</ul>
+<h3 id="设备识别das-oran"><a href="#设备识别das-oran" class="headerlink" title="设备识别das&#x2F;oran"></a>设备识别das&#x2F;oran</h3><ul>
+<li>设备采用环境变量的方式进行das&#x2F;oran机型识别</li>
+<li>该环境变量名称为das_platform</li>
+<li>当设备处于默认情况下，das_platform环境变量为空，该设备为oran设备</li>
+<li>当setenv das_platform <a href="mailto:&#x64;&#97;&#115;&#x40;&#115;&#x79;&#x73;&#x74;&#101;&#109;&#x2d;&#116;&#x6f;&#112;&#46;&#x64;&#116;&#x62;">&#x64;&#97;&#115;&#x40;&#115;&#x79;&#x73;&#x74;&#101;&#109;&#x2d;&#116;&#x6f;&#112;&#46;&#x64;&#116;&#x62;</a>时，设备转变成das设备</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A[fsbl] --&gt; B(uboot) </span><br><span class="line">    B --&gt; C&#123;platform&#125;</span><br><span class="line">    C --&gt;|platform = das| D(das_dtb)</span><br><span class="line">    C --&gt;|platform = NULL| E(oran_dtb)</span><br><span class="line">    E --&gt;|加载| G[kernel]</span><br><span class="line">    D --&gt; |加载| G</span><br></pre></td></tr></table></figure>
+
+<h2 id="设备树模块设计"><a href="#设备树模块设计" class="headerlink" title="设备树模块设计"></a>设备树模块设计</h2><ul>
+<li>由于m2ru平台的das和oran的FPGA完全不同，无法做到兼容，故需要设备自己知道是oran还是das设备，以按照不同的FPGA版本加载对应的设备树，进而加载不同的设备驱动</li>
+<li>m2ru设备按照das和oran的FPGA的xsa文件进行分开编译各自平台设备树</li>
+<li>根据oran&#x2F;das项目需求，自行添加完善设备树</li>
+</ul>
+<h2 id="内核模块设计"><a href="#内核模块设计" class="headerlink" title="内核模块设计"></a>内核模块设计</h2><ul>
+<li>das&#x2F;oran共用驱动，如flash驱动、eth0驱动等不用特殊进行处理</li>
+<li>ptp驱动、ecpri&#x2F;cpri网卡驱动等务必使用设备树配置进行加载</li>
+<li>DTB文件按照<a href="mailto:&#x64;&#97;&#115;&#95;&#x66;&#x64;&#116;&#x40;&#x73;&#x79;&#115;&#x74;&#101;&#x6d;&#45;&#116;&#111;&#x70;&#x2e;&#x64;&#116;&#x62;">&#x64;&#97;&#115;&#95;&#x66;&#x64;&#116;&#x40;&#x73;&#x79;&#115;&#x74;&#101;&#x6d;&#45;&#116;&#111;&#x70;&#x2e;&#x64;&#116;&#x62;</a>&#x2F;<a href="mailto:&#102;&#x64;&#116;&#x40;&#115;&#121;&#x73;&#116;&#x65;&#x6d;&#45;&#116;&#x6f;&#112;&#46;&#100;&#x74;&#98;">&#102;&#x64;&#116;&#x40;&#115;&#121;&#x73;&#116;&#x65;&#x6d;&#45;&#116;&#x6f;&#112;&#46;&#100;&#x74;&#98;</a>描述符链接到image文件中<div align="center"></li>
+</ul>
+<p><img src="/picture/pic1.svg" alt="bd"></p>
+</div>
+
+<h2 id="驱动模块设计"><a href="#驱动模块设计" class="headerlink" title="驱动模块设计"></a>驱动模块设计</h2><h3 id="ecpri-cpri网卡加载"><a href="#ecpri-cpri网卡加载" class="headerlink" title="ecpri&#x2F;cpri网卡加载"></a>ecpri&#x2F;cpri网卡加载</h3><ul>
+<li>das设备加载cpri网卡，对时钟没有额外要求，故不受影响，可正常进行加载</li>
+<li>oran设备加载ecpri网卡时，由于该网卡需要n850晶振输出时钟作为clk，因此，加载该网卡时需要配置850晶振</li>
+<li>目前m2的设计是850晶振通过FPGA连线到ARM侧，因此需要提前加载FPGA，然后控制850时钟，最后加载ecpri网卡</li>
+</ul>
+<p>此时有个疑问，没有加载FPGA的话，xilinx_axienet驱动能否正常加载PHY驱动，因为此时mdio是找不到PHY的(由FPGA模拟产生)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A(axienet_open) --&gt; B(axienet_device_reset) -.-&gt; K(重置xilinx_axienet mac)</span><br><span class="line">    A --&gt; C(of_phy_connect) </span><br><span class="line">    C --&gt; D(phy_connect_direct) --&gt;E(phy_init_hw)</span><br><span class="line">    D --&gt; X(phy_start_machine) -.-&gt; 开启phy状态机</span><br><span class="line">    C --&gt; T(of_phy_find_device) --&gt;bus_find_device-.-&gt;找到PHY设备</span><br><span class="line">    E --&gt; F(phy_device_reset)</span><br><span class="line">    E --&gt; G(soft_reset)</span><br><span class="line">    E --&gt; H(phy_scan_fixups)</span><br></pre></td></tr></table></figure>
+<p>通过上述梳理源码可知，xilinx_axienet的Mac驱动初始化只针对Mac层操作，虚拟phy并不需要对应的驱动，包含在axienet_open操作中</p>
+<p><strong>DAS设备加载cpri网卡加载顺序为：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A(kernel) --&gt; |加载|B(FPGA.bit) </span><br><span class="line">    B --&gt; |启用网卡| D(ifconfig eth0 up)-.-&gt;E(使用网卡)</span><br></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A(kernel) --&gt; |启用网卡| D(ifconfig eth0 up) --&gt; |加载|B(FPGA.bit) -.-&gt;E(使用网卡)</span><br></pre></td></tr></table></figure>
+<p><strong>ORAN设备加载ecpri网卡加载顺序为：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A(kernel) --&gt; |加载|B(FPGA.bit) </span><br><span class="line">    B --&gt; |配置| C(n850时钟)</span><br><span class="line">    C --&gt; |启用网卡| D(ifconfig eth0 up)</span><br></pre></td></tr></table></figure>
+<h3 id="ptp驱动加载"><a href="#ptp驱动加载" class="headerlink" title="ptp驱动加载"></a>ptp驱动加载</h3><p><strong>由于只有oran设备才有ptp驱动，故需要在驱动和设备树中进行修改</strong></p>
+<ul>
+<li>在oran平台的设备树中添加关于ptp的节点描述sunwave,timer-1588-2.0</li>
+<li>将sunwave_ptp_timer驱动移植到内核中进行加载，加载的描述符由设备树进行指定</li>
+<li>ptp驱动针对FPGA的timer模块进行相应的功能控制和中断注册</li>
+</ul>
+<h2 id="设备分区划分"><a href="#设备分区划分" class="headerlink" title="设备分区划分"></a>设备分区划分</h2><div align="center">
+
+<p><img src="/picture/pic_partition.svg" alt="bd"></p>
+</div>
+
+<h2 id="升级模块设计"><a href="#升级模块设计" class="headerlink" title="升级模块设计"></a>升级模块设计</h2><h4 id="向前升级兼容"><a href="#向前升级兼容" class="headerlink" title="向前升级兼容"></a><font color="black">向前升级兼容</font></h4><h5 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h5><ul>
+<li>在外的oran设备，有些客户需要对以前的大包进行升级，因为该以前版本大包是其仔细验证过的版本，是可靠的，只认准该版本进行升级，所以m2ru项目需要向前升级进行兼容。</li>
+<li>升级过程中，设备应用层数据确保不能丢失。</li>
+</ul>
+<h5 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h5><ul>
+<li>以前oran版本大包是自带底层升级包的，该底层版本是没有备份系统的，分区划分也不一致，执行旧的大包中的升级底层脚本会导致设备挂掉。</li>
+<li>设备应用层的数据是不能丢失的，一旦分区改变，该ubi文件系统被破坏掉，arm等配置文件均会丢失</li>
+</ul>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>kernel分区和rootfs分区的flash相对偏移offset均保持不变，详情见下图分区划分对比。这样可以做到升级过程中不破坏rootfs及rootfs_bak分区，完好保留上层数据。</li>
+<li>boot分区(boot0)分配32M内存，用以保留升级以前boot文件的能力，还能保证当初底层默认bit文件(以前的oran设备是使用底层bit文件的，并不另行加载)</li>
+</ul>
+<div align="center">
+
+<p><img src="/picture/pic_compare_partition.svg" alt="bd"></p>
+</div>
+
+<h5 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h5><ul>
+<li>由于目前在线升级系统，均是使用mtd进行升级，因此按照之前升级脚本逻辑，会对mtd0&#x2F;mtd2进行擦写操作。</li>
+<li>对于新底层而言，擦写以前的boot是可以执行成功的(mtd0空间足够)，但mtd2由于分区改变只有2M，因此读写操作失败，退出升级流程。</li>
+<li>结果而言，设备重启后，设备的boot换成了旧大包中的boot，boot_bak1&#x2F;boot_bak3仍为升级前boot备份，boot_bak2被擦掉。kernel保留升级前内核。</li>
+<li>设备可以正常运行，应用层数据完好无损，已通过测试验证。</li>
+</ul>
+<h5 id="升级风险"><a href="#升级风险" class="headerlink" title="升级风险"></a>升级风险</h5><ul>
+<li>以前存在某个版本的大包里的升级脚本，有个升级逻辑是，只要读写flash不一致，就会无限次数进行升级操作，断电重启后仍然会继续无线升级。该大包会导致设备陷入无限重启中，设备无法正常运行。</li>
+<li>由于需要向前兼容，所以，该版本是没有对boot进行备份的，仅有boot_bak1&#x2F;3的新底层boot备份，可能会有坏块等未知风险存在，建议升级使用最新的底层包。</li>
+</ul>
+<h4 id="向后升级兼容"><a href="#向后升级兼容" class="headerlink" title="向后升级兼容"></a><font color="black">向后升级兼容</font></h4><ul>
+<li>向后进行兼容升级，由于分区一致，故可以直接使用升级脚本进行升级操作即可。</li>
+<li>目前经过测试，该升级功能一切正常，未出现升级失败情况。</li>
+</ul>
+<h4 id="das-oran互相升级"><a href="#das-oran互相升级" class="headerlink" title="das&#x2F;oran互相升级"></a><font color="black">das&#x2F;oran互相升级</font></h4><h5 id="需求描述-1"><a href="#需求描述-1" class="headerlink" title="需求描述"></a>需求描述</h5><ul>
+<li>产线生产过程中，先是生产处das版本，然后通过在线升级成oran版本进行测试的</li>
+<li>外面的das设备也是有需求转换成oran设备的</li>
+<li>某些特点情况下，oran设备需要保留转换成das设备的能力</li>
+</ul>
+<h5 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h5><p><strong><font size = "3" color = "purple">DAS设备转换成ORAN设备：</font></strong></p>
+<ul>
+<li>擦除env分区，或者擦除das_platform环境变量</li>
+<li>升级大包中包含kernel_load_fpga.sh脚本进行替换，默认使用initramfs文件系统中的bit文件进行加载，若&#x2F;dryfly&#x2F;app&#x2F;FPGA.bit存在即加载最新的bit文件</li>
+<li>使用n850时钟配置工具配置ORAN时钟</li>
+<li>再启用ecpri网卡进行使用</li>
+</ul>
+<p><strong><font size = "3" color = "purple">ORAN设备转换成DAS设备：</font></strong></p>
+<ul>
+<li>烧写env分区，或者修改das_platform环境变量</li>
+<li>升级大包中将&#x2F;drgfly&#x2F;etc&#x2F;kernel_load_fpga.sh脚本使用&#x2F;etc&#x2F;kernel_load_fpga.sh底层默认脚本进行替换</li>
+</ul>
+<p><strong><font size = "3" color = "purple">产线裸板升级成DAS设备：</font></strong></p>
+<ul>
+<li>产线自动烧写脚本中增加一行命令”setenv das_platform <a href="mailto:&#100;&#97;&#115;&#x40;&#x73;&#x79;&#115;&#116;&#x65;&#109;&#x2d;&#116;&#x6f;&#x70;&#46;&#x64;&#116;&#x62;">&#100;&#97;&#115;&#x40;&#x73;&#x79;&#115;&#116;&#x65;&#109;&#x2d;&#116;&#x6f;&#x70;&#46;&#x64;&#116;&#x62;</a>“ “seveenv”命令即可底层进行切换</li>
+</ul>
+<p><strong><font size = "3" color = "purple">注意事项：</font></strong></p>
+<ul>
+<li>理论上不支持ORAN设备切换成DAS设备，只是设计上保留该情况下设备的升级能力，实际测试也ok，但不建议。</li>
+<li>目前该设计底层不存在ORAN&#x2F;DAS底层，需搭配相应的上层才能切换到相应的平台。</li>
+</ul>
+<h1 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h1><h2 id="FPGA驱动接口设计"><a href="#FPGA驱动接口设计" class="headerlink" title="FPGA驱动接口设计"></a>FPGA驱动接口设计</h2><p><strong>略</strong></p>
+<h2 id="GPIO驱动接口设计"><a href="#GPIO驱动接口设计" class="headerlink" title="GPIO驱动接口设计"></a>GPIO驱动接口设计</h2><p><strong>略</strong></p>
+<h2 id="N850时钟驱动接口设计"><a href="#N850时钟驱动接口设计" class="headerlink" title="N850时钟驱动接口设计"></a>N850时钟驱动接口设计</h2><p><strong>略</strong></p>
+<h2 id="PTP状态-配置-驱动接口设计"><a href="#PTP状态-配置-驱动接口设计" class="headerlink" title="PTP状态&#x2F;配置&#x2F;驱动接口设计"></a>PTP状态&#x2F;配置&#x2F;驱动接口设计</h2><p><strong>略</strong></p>
+<h1 id="评审结果须知"><a href="#评审结果须知" class="headerlink" title="评审结果须知"></a>评审结果须知</h1><h2 id="底层方案评审结果"><a href="#底层方案评审结果" class="headerlink" title="底层方案评审结果"></a>底层方案评审结果</h2><p>以下是评审得出的新底层v4.0需要满足的要求，如下：</p>
+<p>1、Das和oran共用底层（v4.0）<br>2、Das应用层不需修改<br>3、Das不带boot备份底层可以升级新版本<br>4、Oran新旧版本互相升级版本，不会挂掉<br>5、Das带boot备份版本（&gt;&#x3D;v1.5）不能升级到v4.0版本<br>6、V4.0适用范围在制、库存、返修 </p>
+<h2 id="结果评析"><a href="#结果评析" class="headerlink" title="结果评析"></a>结果评析</h2><ul>
+<li>产线目前das带boot版本(&gt;&#x3D;v1.5)是大改过底层分区的，与当前ORAN底层、以前ORAN底层、以前DAS底层均不兼容，无法通过在线升级进行更新。</li>
+<li>DAS带boot备份版本(&gt;&#x3D;v1.5),无法与现网中ORAN设备进行兼容，当前似乎也没有ORAN版本与之搭配使用。</li>
+<li>该新方案仅需满足在制、库存、返修设备的适用范围，不需要兼容当前产线最新das设备，似乎也没法进行兼容。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/20/petalinux/" rel="prev" title="petalinux编译环境替换设计">
+      <i class="fa fa-chevron-left"></i> petalinux编译环境替换设计
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/20/kddi_mu%E5%BA%95%E5%B1%82%E7%89%88%E6%9C%AC%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/" rel="next" title="KDDI_MU底层详细设计">
+      KDDI_MU底层详细设计 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">详细设计背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1%E7%9B%AE%E7%9A%84"><span class="nav-number">1.2.</span> <span class="nav-text">详细设计目的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.</span> <span class="nav-text">2. 模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UBOOT%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">UBOOT模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#uboot%E5%90%AF%E5%8A%A8%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">uboot启动逻辑设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E8%AF%86%E5%88%ABdas-oran"><span class="nav-number">2.1.2.</span> <span class="nav-text">设备识别das&#x2F;oran</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%A0%91%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.</span> <span class="nav-text">设备树模块设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.3.</span> <span class="nav-text">内核模块设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.4.</span> <span class="nav-text">驱动模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ecpri-cpri%E7%BD%91%E5%8D%A1%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.4.1.</span> <span class="nav-text">ecpri&#x2F;cpri网卡加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ptp%E9%A9%B1%E5%8A%A8%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.4.2.</span> <span class="nav-text">ptp驱动加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E5%88%86%E5%8C%BA%E5%88%92%E5%88%86"><span class="nav-number">2.5.</span> <span class="nav-text">设备分区划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.6.</span> <span class="nav-text">升级模块设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E5%89%8D%E5%8D%87%E7%BA%A7%E5%85%BC%E5%AE%B9"><span class="nav-number">2.6.0.1.</span> <span class="nav-text">向前升级兼容</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.6.0.1.1.</span> <span class="nav-text">需求描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.0.1.2.</span> <span class="nav-text">存在问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.6.0.1.3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81"><span class="nav-number">2.6.0.1.4.</span> <span class="nav-text">结果验证</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E9%A3%8E%E9%99%A9"><span class="nav-number">2.6.0.1.5.</span> <span class="nav-text">升级风险</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E5%90%8E%E5%8D%87%E7%BA%A7%E5%85%BC%E5%AE%B9"><span class="nav-number">2.6.0.2.</span> <span class="nav-text">向后升级兼容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#das-oran%E4%BA%92%E7%9B%B8%E5%8D%87%E7%BA%A7"><span class="nav-number">2.6.0.3.</span> <span class="nav-text">das&#x2F;oran互相升级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.6.0.3.1.</span> <span class="nav-text">需求描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">2.6.0.3.2.</span> <span class="nav-text">实现方案</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.</span> <span class="nav-text">接口设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FPGA%E9%A9%B1%E5%8A%A8%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.1.</span> <span class="nav-text">FPGA驱动接口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPIO%E9%A9%B1%E5%8A%A8%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.2.</span> <span class="nav-text">GPIO驱动接口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N850%E6%97%B6%E9%92%9F%E9%A9%B1%E5%8A%A8%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.3.</span> <span class="nav-text">N850时钟驱动接口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PTP%E7%8A%B6%E6%80%81-%E9%85%8D%E7%BD%AE-%E9%A9%B1%E5%8A%A8%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1"><span class="nav-number">3.4.</span> <span class="nav-text">PTP状态&#x2F;配置&#x2F;驱动接口设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1%E7%BB%93%E6%9E%9C%E9%A1%BB%E7%9F%A5"><span class="nav-number">4.</span> <span class="nav-text">评审结果须知</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E6%96%B9%E6%A1%88%E8%AF%84%E5%AE%A1%E7%BB%93%E6%9E%9C"><span class="nav-number">4.1.</span> <span class="nav-text">底层方案评审结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E8%AF%84%E6%9E%90"><span class="nav-number">4.2.</span> <span class="nav-text">结果评析</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">January</p>
+  <div class="site-description" itemprop="description">Linux编程,Python学习,Python爬虫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">January</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

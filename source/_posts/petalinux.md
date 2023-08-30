@@ -1,5 +1,8 @@
 ---
 title: petalinux编译环境替换设计
+date: 2020-05-20
+tags:
+- Linux
 ---
 <div align="center">
 <font size=7 > petalinux编译环境替换设计
@@ -17,7 +20,7 @@ title: petalinux编译环境替换设计
 
 |版本|简介|编辑日期|作者|
 |---|----|----|----|
-|V1.0|初稿|2023/6/5|李政|
+|V1.0|初稿|2020/5/20|January|
 
 
 </div>
